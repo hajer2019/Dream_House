@@ -5,7 +5,6 @@ body {
   min-height: 500px;
 }
 .navbar {
-  position: absolute !important;
   box-shadow: 0 0px 10px 0 rgba(0, 0, 0, 0.15);
   width: 100%;
   background: hsl(211, 25%, 97%);
