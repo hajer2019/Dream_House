@@ -1,6 +1,6 @@
-
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+
 class Login extends Component {
   constructor() {
     super();
@@ -10,20 +10,20 @@ class Login extends Component {
       errors: {}
     };
   }
-onChange = e => {
+  onChange = e => {
     this.setState({ [e.target.id]: e.target.value });
   };
-onSubmit = e => {
+  onSubmit = e => {
     e.preventDefault();
-const userData = {
+    const userData = {
       email: this.state.email,
       password: this.state.password
     };
-console.log(userData);
+    console.log(userData);
   };
-render() {
+  render() {
     const { errors } = this.state;
-return (
+    return (
       <div className="container">
         <div style={{ marginTop: "4rem" }} className="row">
           <div className="col s8 offset-s2">

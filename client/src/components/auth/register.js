@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import axios from 'axios'
-​
-class Register extends Component {
+
+export default class register extends Component {
   constructor() {
     super();
     this.state = {
@@ -13,22 +12,21 @@ class Register extends Component {
       errors: {}
     };
   }
-onChange = e => {
+  onChange = e => {
     this.setState({ [e.target.id]: e.target.value });
   };
-onSubmit = e => {
+  onSubmit = e => {
     e.preventDefault();
-const newUser = {
+    const newUser = {
       name: this.state.name,
       email: this.state.email,
       password: this.state.password
     };
-console.log(newUser);
-axios.post('api//users/register', newUser)
+    console.log(newUser);
   };
-render() {
+  render() {
     const { errors } = this.state;
-return (
+    return (
       <div className="container">
         <div className="row">
           <div className="col s8 offset-s2">
@@ -106,4 +104,3 @@ return (
     );
   }
 }
-export default Register;
