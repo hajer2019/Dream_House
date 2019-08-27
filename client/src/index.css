@@ -1,0 +1,159 @@
+body {
+  margin: 0 auto;
+  background-image: url(./images/bg11.png);
+  font-family: "Montserrat", sans-serif;
+  min-height: 500px;
+}
+.navbar {
+  position: absolute !important;
+  box-shadow: 0 0px 10px 0 rgba(0, 0, 0, 0.15);
+  width: 100%;
+  background: hsl(211, 25%, 97%);
+  z-index: 2;
+  display: flex;
+}
+.nav li {
+  border-radius: 5px;
+  background-color: #2491b9;
+  border: 2px solid #247084;
+  margin-right: 20px;
+}
+.nav li a {
+  color: #fff;
+}
+.nav li:hover {
+  border: 2px solid #2491b9;
+  background-color: #247084;
+}
+.nav li a:hover {
+  /* color: rgb(10, 2, 2); */
+}
+.carousel img {
+  height: 500px;
+}
+.logo img {
+  height: 75px;
+  width: 123px;
+  margin-left: 153px;
+}
+input {
+  width: 200px !important;
+}
+
+.text-intro {
+  box-shadow: 0px -3px 11px -3px rgba(0, 0, 0, 0.1);
+  width: 75%;
+  position: relative;
+  z-index: 2;
+  margin: 0 auto;
+  margin-top: 20px;
+  padding: 23px;
+  text-align: justify;
+}
+
+.box1 {
+  display: flex;
+  justify-content: space-around;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  width: 850px;
+}
+.box_item {
+  box-shadow: 0px 0px 6px -1px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  margin-bottom: 25px;
+}
+.box_item img {
+  width: 250px;
+  height: 220px;
+}
+h3,
+h4 {
+  letter-spacing: 9px;
+  text-transform: uppercase;
+  padding: 20px;
+  font-weight: 700;
+  text-align: center;
+  color: #05797b;
+}
+.contact {
+  padding-top: 150px;
+}
+.footer {
+  background-color: rgba(0, 2, 19, 0.85);
+  font-size: 12px;
+  color: #f8f8f8;
+  padding-top: 20px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-a;
+  justify-content: space-around;
+  margin-top: 25px;
+  padding-bottom: 20px;
+}
+#fs-fb {
+  /* background-image: url(./images/fb.png); */
+  background-repeat: no-repeat;
+  padding-left: 55px;
+  padding-bottom: 28px;
+  padding-top: 7px;
+  margin-right: 10px;
+}
+#fs-tw {
+  /* background-image: url(./images/tw.png); */
+  background-repeat: no-repeat;
+  padding-left: 55px;
+  padding-bottom: 28px;
+  margin-right: 10px;
+  padding-top: 7px;
+}
+#fs-ln {
+  /* background-image: url(./images/lkin.png); */
+  background-repeat: no-repeat;
+  padding-left: 55px;
+  padding-bottom: 28px;
+  padding-top: 7px;
+}
+
+.follow-title {
+  padding-bottom: 20px;
+}
+.formContact {
+  box-shadow: 1px 5px 8px -4px rgba(0, 0, 0, 0.1);
+  width: 800px;
+  margin: 0 auto;
+}
+
+#defaultContactFormName,
+#defaultContactFormEmail {
+  width: 100% !important;
+}
+
+.menu {
+  display: flex;
+}
+.form_ajout {
+  padding-top: 100px;
+}
+.add-title {
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  font-weight: bold;
+  width: 800px;
+  letter-spacing: 4px;
+  text-align: center;
+  color: #2b89a5;
+  margin: 0 auto;
+}
+
+.maincard {
+  margin-top: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  border: 1px rgb(117, 114, 114) solid;
+  padding: 30px;
+  border-radius: 3px;
+}
+.formfield {
+  margin-top: 15px;
+}
