@@ -1,5 +1,4 @@
 import React from "react";
-
 import Carousell from "../components/carousel";
 import Intro from "../components/searchForm";
 // import Search from "../components/search";
