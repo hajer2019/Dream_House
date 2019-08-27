@@ -1,5 +1,5 @@
 const express = require("express");
-const User = require("../models/User");
+const Admin = require("../models/Admin");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const keys = require("../config/keys");
@@ -7,19 +7,19 @@ const passport = require("passport");
 
 const router = express.Router();
 
-// Register user
-// Post request '/user/register'
+// Register admin
+// Post request '/admin/register'
 
-router.post("/user/register", (req, res) => {
+router.post("/admin/register", (req, res) => {
   const { name, email, password } = req.body;
 
   User.findOne({ email }).then(user => {
     if (user) {
-      return res.json({ msg: "user already exists" });
+      return res.json({ msg: "Admin already exists" });
     }
   });
 
-  const newUser = new User({
+  const newAdmin = new Admin({
     name,
     email,
     password
@@ -27,28 +27,28 @@ router.post("/user/register", (req, res) => {
 
   bcrypt.genSalt(10, (err, salt) => {
     bcrypt.hash(newUser.password, salt, (err, hash) => {
-      newUser.password = hash;
-      newUser
+      newAdmin.password = hash;
+      newAdmin
         .save()
-        .then(saved => res.json({ user: newUser }))
+        .then(saved => res.json({ admin: newAdmin }))
         .catch(err => console.log(err));
     });
   });
 });
 
-// Login user
-// Post request '/user/login'
+// Login admin
+// Post request '/admin/login'
 
-router.post("/user/login", (req, res) => {
+router.post("/admin/login", (req, res) => {
   const { email, password } = req.body;
 
-  User.findOne({ email }).then(user => {
-    if (!user) {
-      return res.json({ msg: "user does not exists" });
+  Admin.findOne({ email }).then(admin => {
+    if (!admin) {
+      return res.json({ msg: "Admin does not exists" });
     } else {
-      bcrypt.compare(password, user.password).then(isMatched => {
+      bcrypt.compare(password, admin.password).then(isMatched => {
         if (isMatched) {
-          const payload = { id: user.id, name: user.name };
+          const payload = { id: admin.id, name: admin.name };
           jwt.sign(
             payload,
             keys.secretOrKey,
@@ -64,15 +64,6 @@ router.post("/user/login", (req, res) => {
       });
     }
   });
-});
-
-// Delete user
-// Delete request '/user/:id'
-
-router.delete("/user/:id", (req, res) => {
-  User.findOneAndDelete(req.params.id)
-    .then(data => res.send({ success: true }))
-    .catch(err => res.send({ success: false }));
 });
 
 router.get(
