@@ -11,15 +11,15 @@ function Header() {
       </div>
 
       <div className="menu">
-        <ul class="nav">
-          {/* <Link to="/home" className="nav-link ">
+        <ul className="nav">
+          <Link to="/home" className="nav-link ">
             <li className="nav-item">Accueil</li>
           </Link>
           <li className="nav-item">
             <Link to="/contact" className="nav-link">
               Contact
             </Link>
-          </li> */}
+          </li>
 
           <li className="nav-item">
             <Link to="/Add" className="nav-link">

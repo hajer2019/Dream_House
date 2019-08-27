@@ -15,7 +15,10 @@ app.use(express.json());
 app.use("/api", userRoute);
 
 // Announc route middleware
-app.use("/api", passport.authenticate("jwt", { session: false }), announcRoute);
+app.use(
+  "/api",
+  /*passport.authenticate("jwt", { session: false }),*/ announcRoute
+);
 
 //passport Midleware
 app.use(passport.initialize());
@@ -23,7 +26,7 @@ app.use(passport.initialize());
 //passport Config
 require("./config/passport")(passport);
 
-//Database connection
+//Database connexion
 mongoose
   .connect(keys.mongoURI, { useNewUrlParser: true, useCreateIndex: true })
   .then(() => {

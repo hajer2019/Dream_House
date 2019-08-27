@@ -4,7 +4,10 @@ function Footer() {
   return (
     <div className="footer">
       <div className="">Tous les droits reservés</div>
-      <div className="links">Accueil | Contact | Connexion | Inscription </div>
+      <div className="liens">
+        <link to="/home"> Accueil</link> |<Link>Contact</Link> |{" "}
+        <Link> Connexion </Link> | <Link to="/register">Inscription</Link>
+      </div>
       <div className="socialmedia">
         <div id="sidebar" className="desktop-only" style={{ opacity: 1 }}>
           <div className="socialbox">
