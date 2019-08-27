@@ -1,14 +1,14 @@
 import React from "react";
-
 import Carousell from "../components/carousel";
 import Intro from "../components/searchForm";
-import Search from "../components/search";
+// import Search from "../components/search";
 import Appart from "../components/appart";
+
 function Home() {
   return (
     <div className="home-page">
       <Carousell />
-      <Search />
+      {/* <Search /> */}
       <Intro />
       <Appart />
     </div>

@@ -1,14 +1,15 @@
 import React from "react";
 import logoImage from "../images/log1.png";
-import Modal from "./modal";
 import { Link } from "react-router-dom";
 
 function Header() {
   return (
     <div className="navbar">
-      <div className="logo">
-        <img src={logoImage} alt="" />
-      </div>
+      <Link to="/">
+        <div className="logo">
+          <img src={logoImage} alt="" />
+        </div>
+      </Link>
 
       <div className="menu">
         <ul class="nav">
@@ -22,7 +23,7 @@ function Header() {
           </li> */}
 
           <li className="nav-item">
-            <Link to="/Add" className="nav-link">
+            <Link to="/add" className="nav-link">
               Ajouter une annonce
             </Link>
           </li>
