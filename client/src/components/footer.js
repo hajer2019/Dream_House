@@ -1,10 +1,15 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Footer() {
   return (
     <div className="footer">
       <div className="">Tous les droits reservés</div>
-      <div className="links">Accueil | Contact | Connexion | Inscription </div>
+      <div className="liens">
+        <Link to="/home"> Accueil</Link> | <Link to="contact">Contact</Link> |{" "}
+        <Link to="/login"> Connexion </Link> |{" "}
+        <Link to="/register">Inscription</Link>
+      </div>
       <div className="socialmedia">
         <div id="sidebar" className="desktop-only" style={{ opacity: 1 }}>
           <div className="socialbox">

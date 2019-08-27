@@ -7,12 +7,15 @@ function Header() {
     <div className="navbar">
       <Link to="/">
         <div className="logo">
-          <img src={logoImage} alt="" />
+          <Link to="/">
+            {" "}
+            <img src={logoImage} alt="" />
+          </Link>
         </div>
       </Link>
 
       <div className="menu">
-        <ul class="nav">
+        <ul className="nav">
           {/* <Link to="/home" className="nav-link ">
             <li className="nav-item">Accueil</li>
           </Link>

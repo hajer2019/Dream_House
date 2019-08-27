@@ -47,3 +47,29 @@ export const house = [
     image: img6
   }
 ];
+
+export const ville = [
+  {
+    name: "Tunis",
+    options: [
+      "Bardo",
+      "LaGoulette",
+      "Carthage",
+      "Marsa",
+      "Gammarth",
+      "Menzah",
+      "Manar2"
+    ]
+  },
+  {
+    name: "Ariana",
+    options: [
+      "La Soukra",
+      "Riadh Andalous",
+      "Dar Fadhal",
+      "Cité el Ghazela",
+      "chotrana ",
+      "Enkhilet"
+    ]
+  }
+];
