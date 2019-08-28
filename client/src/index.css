@@ -1,8 +1,8 @@
 body {
   margin: 0 auto;
-  background-image: url(./images/bg11.png);
+  text-align: center;
+  background-image: url(./images/bg_img0.png);
   font-family: "Montserrat", sans-serif;
-  min-height: 500px;
 }
 .navbar {
   box-shadow: 0 0px 10px 0 rgba(0, 0, 0, 0.15);
@@ -24,9 +24,6 @@ body {
   border: 2px solid #2491b9;
   background-color: #247084;
 }
-/* .nav li a:hover {
-  color: rgb(10, 2, 2);
-} */
 .carousel img {
   height: 500px;
 }
@@ -41,6 +38,7 @@ input {
 
 .text-intro {
   box-shadow: 0px -3px 11px -3px rgba(0, 0, 0, 0.1);
+  background-color: white;
   width: 75%;
   position: relative;
   z-index: 2;
@@ -59,6 +57,7 @@ input {
 }
 .box_item {
   box-shadow: 0px 0px 6px -1px rgba(0, 0, 0, 0.3);
+  background-color: white;
   border-radius: 5px;
   margin-bottom: 25px;
 }
@@ -79,42 +78,43 @@ h4 {
   padding-top: 150px;
 }
 .footer {
-  background-image: url(./images/bgfooter1.png);
-  background-repeat: repeat-x;
-  background-position: bottom;
-  background-color: rgba(0, 2, 19, 0.85);
-  font-size: 12px;
-  color: #f8f8f8;
+  font-size: 14px;
+  color: black;
   padding-top: 20px;
   font-weight: bold;
-  display: flex;
-  justify-content: space-a;
-  justify-content: space-around;
+  width: 100%;
+  align-items: center;
+  margin: 0 auto;
   margin-top: 25px;
-  padding-bottom: 20px;
+  justify-content: space-around;
+  box-shadow: -6px -6px 10px -5px rgba(0, 123, 255, 0.14);
+  display: flex;
+}
+.liens a {
+  color: #000 !important;
 }
 #fs-fb {
-  /* background-image: url(./images/fb.png); */
   background-repeat: no-repeat;
   padding-left: 55px;
   padding-bottom: 28px;
   padding-top: 7px;
   margin-right: 10px;
+  font-size: 35px;
 }
 #fs-tw {
-  /* background-image: url(./images/tw.png); */
   background-repeat: no-repeat;
   padding-left: 55px;
   padding-bottom: 28px;
   margin-right: 10px;
   padding-top: 7px;
+  font-size: 35px;
 }
 #fs-ln {
-  /* background-image: url(./images/lkin.png); */
   background-repeat: no-repeat;
   padding-left: 55px;
   padding-bottom: 28px;
   padding-top: 7px;
+  font-size: 35px;
 }
 
 .follow-title {
@@ -165,9 +165,9 @@ h4 {
 }
 .search-form {
   position: absolute;
-  margin-top: -102px;
+  top: 487px;
   z-index: 5;
-  margin-left: 226px;
+  left: 150px;
   padding: 25px;
   border: 1px solid #e2e2e2;
   background-color: #f4fdffcc;
@@ -180,9 +180,6 @@ h4 {
   width: 150px;
 }
 .search-heading {
-  background-image: url(./images/sr.png);
-  background-repeat: no-repeat;
-  background-position: 213px 6px;
   background-color: #040404ed;
   color: #ffffff;
   font-size: 17px;
@@ -195,4 +192,10 @@ h4 {
   left: 0;
   letter-spacing: 2px;
   z-index: 999;
+}
+label {
+  padding: 10px;
+}
+.socialbox {
+  text-align: center;
 }
