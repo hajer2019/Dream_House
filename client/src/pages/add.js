@@ -193,7 +193,12 @@ export default class Add extends React.Component {
 
           <FormGroup className="formfield" check row>
             <Col sm={{ size: 10, offset: 2 }}>
-              <Button onClick={this.onSubmit}>Submit</Button>
+              <Button
+                onClick={this.onSubmit}
+                style={{ backgroundColor: "#2f92f3 !important" }}
+              >
+                Submit
+              </Button>
             </Col>
           </FormGroup>
         </Form>

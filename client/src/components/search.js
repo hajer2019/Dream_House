@@ -30,9 +30,12 @@ function Search() {
             <label for="categories" class="grid-20">
               Ville
             </label>
-            <select name="search categories" id="categories" class="grid-80">
-              <option value="Bardo">Bardo</option>
-            </select>
+            <input
+              type="text"
+              name="search categories"
+              id="categories"
+              class="grid-80"
+            />
           </div>
 
           <div className="inp-wrap cat-wrap">

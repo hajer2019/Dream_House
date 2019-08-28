@@ -7,7 +7,7 @@ body {
 .navbar {
   box-shadow: 0 0px 10px 0 rgba(0, 0, 0, 0.15);
   width: 100%;
-  background: hsl(211, 25%, 97%);
+  background-color: #ffffff;
   z-index: 2;
   display: flex;
 }
@@ -166,7 +166,7 @@ h4 {
 }
 .search-form {
   position: absolute;
-  top: 487px;
+  top: 495px;
   z-index: 5;
   left: 0;
   width: 100%;
@@ -199,9 +199,7 @@ h4 {
   letter-spacing: 2px;
   z-index: 999;
 }
-label {
-  padding: 10px;
-}
+
 .socialbox {
   text-align: center;
 }
