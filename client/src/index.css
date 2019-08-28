@@ -199,3 +199,73 @@ label {
 .socialbox {
   text-align: center;
 }
+
+/*register form css*/
+.register-form {
+  min-height: 310px;
+}
+
+.send-button {
+  width: 100%;
+  font-weight: 600;
+  color: #fff;
+  padding: 8px 25px;
+  margin-bottom: 15px !important;
+}
+
+.g-button {
+  color: #fff !important;
+  border: 1px solid #ea4335;
+  background: #ea4335 !important;
+  width: 100%;
+  font-weight: 600;
+  color: #fff;
+  padding: 8px 25px;
+}
+.my-input {
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  cursor: text;
+  padding: 8px 10px;
+  transition: border 0.1s linear;
+  width: 348px !important;
+}
+.header-title {
+  margin: 2rem 0;
+}
+
+.heading--subtitle {
+  color: #5e8396;
+  font-size: 21px;
+  line-height: 32px;
+  font-weight: 400;
+}
+
+/*login form*/
+
+.form-control-login {
+  width: 300px !important;
+}
+#login .container #login-row #login-column #login-box #login-form {
+  padding: 20px;
+  background-color: #eaeaea;
+}
+#login-box {
+  margin-top: 30px;
+}
+
+.login-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-top: 29px;
+}
+.form-control-auth {
+  width: 349px !important;
+}
+.form-group-auth {
+  margin-bottom: 11px;
+}
+.btn-login {
+  height: 51px;
+  width: 183px;
+}
