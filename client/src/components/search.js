@@ -65,7 +65,7 @@ function Search() {
             <button
               class="grid-100 btn"
               style={{
-                marginTop: "2px",
+                marginTop: "0px",
                 backgroundColor: "#fff",
                 color: "#000000",
                 marginRight: "0",
