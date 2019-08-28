@@ -7,7 +7,7 @@ body {
 .navbar {
   box-shadow: 0 0px 10px 0 rgba(0, 0, 0, 0.15);
   width: 100%;
-  background: hsl(211, 25%, 97%);
+  background-color: #ffffff;
   z-index: 2;
   display: flex;
 }
@@ -122,6 +122,7 @@ h4 {
 }
 .formContact {
   box-shadow: 1px 5px 8px -4px rgba(0, 0, 0, 0.1);
+  background-color: white;
   width: 800px;
   margin: 0 auto;
 }
@@ -165,19 +166,24 @@ h4 {
 }
 .search-form {
   position: absolute;
-  top: 487px;
+  top: 495px;
   z-index: 5;
-  left: 150px;
+  left: 0;
+  width: 100%;
   padding: 25px;
   border: 1px solid #e2e2e2;
   background-color: #f4fdffcc;
 }
 .search-form form {
   display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
 #categories {
   border-radius: 5px;
-  width: 150px;
+  width: 210px;
+  height: 30px;
+  margin-left: 5px;
 }
 .search-heading {
   background-color: #040404ed;
@@ -188,14 +194,12 @@ h4 {
   margin: 0;
   padding-right: 50px;
   position: absolute;
-  top: -57px;
+  top: -58px;
   left: 0;
   letter-spacing: 2px;
   z-index: 999;
 }
-label {
-  padding: 10px;
-}
+
 .socialbox {
   text-align: center;
 }
