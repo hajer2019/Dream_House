@@ -62,7 +62,16 @@ function Search() {
           </div>
 
           <div className="inp-wrap submit-wrap">
-            <button class="grid-100 btn" style={{ marginTop: "-7px" }}>
+            <button
+              class="grid-100 btn"
+              style={{
+                marginTop: "2px",
+                backgroundColor: "#fff",
+                color: "#000000",
+                marginRight: "0",
+                marginLeft: "9px"
+              }}
+            >
               Search
             </button>
           </div>
