@@ -240,6 +240,34 @@ label {
   font-weight: 400;
 }
 
+/*Annonces List Style*/
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 1000px;
+}
+
+.annonce-card {
+  border: 1px solid #f1f1f1;
+  height: 330px;
+  width: 280px;
+  margin-top: 26px;
+}
+
+.annonce-card:hover {
+  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.14);
+}
+
+.card-title-annonce {
+  color: #4064d7 !important;
+}
+
+.card-text {
+  color: #272727;
+}
+
 /*login form*/
 
 .form-control-login {
