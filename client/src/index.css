@@ -243,6 +243,15 @@ h4 {
   line-height: 32px;
   font-weight: 400;
 }
+/*Home Categorie list*/
+
+.home-card{
+  width:290px;
+  height:80px;
+}
+
+
+
 
 /*Annonces List Style*/
 
