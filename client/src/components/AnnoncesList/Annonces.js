@@ -4,7 +4,7 @@ import image1 from "../../images/img1.jpg";
 class List extends Component {
   render() {
     return (
-      <div className="w-75 container cards-container">
+      <div className="w-75 mt-4 container cards-container">
         <div class="card annonce-card ">
           <img src={image1} class="card-img-top" alt="..." />
           <div class="card-body">
