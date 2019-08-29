@@ -9,7 +9,7 @@ class Search extends React.Component {
       house: this.props.house,
       villes: "",
       gouvernerat: "",
-      services: "",
+      type: "",
       TypeBiens: ""
     };
   }
@@ -23,7 +23,7 @@ class Search extends React.Component {
     const annoInfo = {
       gouvernerat: this.state.gouvernerat,
       villes: this.state.villes,
-      services: this.state.services,
+      type: this.state.type,
       TypeBiens: this.state.TypeBiens
     };
 
@@ -79,15 +79,15 @@ class Search extends React.Component {
                 onChange={this.onChange}
                 id="villes"
                 class="grid-80"
-                placeholder="saisir votre ville"
+                placeholder="saisir votre ville..."
               />
             </div>
 
             <div className="inp-wrap cat-wrap">
               <select
                 style={{ width: "200px" }}
-                name="services"
-                id="services"
+                name="type"
+                id="type"
                 class="grid-80"
                 onChange={this.onChange}
               >
