@@ -60,16 +60,5 @@ export const ville = [
       "Menzah",
       "Manar2"
     ]
-  },
-  {
-    name: "Ariana",
-    options: [
-      "La Soukra",
-      "Riadh Andalous",
-      "Dar Fadhal",
-      "Cité el Ghazela",
-      "chotrana ",
-      "Enkhilet"
-    ]
   }
 ];
