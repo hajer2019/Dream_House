@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import AnnonceInfo from "./AnnonceInfo";
 import image1 from "../../images/img1.jpg";
 
 class List extends Component {

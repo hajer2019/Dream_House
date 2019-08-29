@@ -136,7 +136,7 @@ h4 {
   display: flex;
 }
 .form_ajout {
-  padding-top: 100px;
+  padding-top: 10px;
 }
 .add-title {
   text-transform: uppercase;
@@ -245,13 +245,10 @@ h4 {
 }
 /*Home Categorie list*/
 
-.home-card{
-  width:290px;
-  height:80px;
+.home-card {
+  width: 290px;
+  height: 80px;
 }
-
-
-
 
 /*Annonces List Style*/
 
@@ -309,4 +306,8 @@ h4 {
 .btn-login {
   height: 51px;
   width: 183px;
+}
+
+.card-info-container {
+  min-height: 500px !important;
 }
