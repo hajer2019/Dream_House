@@ -8,57 +8,48 @@ import img6 from "./images/gammarth2.jpg";
 
 export const house = [
   {
+    gouvernerat: "Tunis",
     ville: "Gammarth",
-    type: "villa",
-    nbr_chambre: 6,
+    typebien: "villa",
+    type: "louer",
     image: img1
   },
 
   {
+    gouvernerat: "Tunis",
     ville: "Gammarth",
-    type: "villa",
-    nbr_chambre: 6,
+    typebien: "villa",
+    type: "vendre",
     image: img2
   },
 
   {
-    ville: "Sidi Bousaid",
-    type: "villa",
-    nbr_chambre: 6,
+    gouvernerat: "Tunis",
+    ville: "Marsa",
+    typebien: "maison",
+    type: "vendre",
     image: img3
   },
   {
-    ville: "Gammarth",
-    type: "villa",
-    nbr_chambre: 4,
+    gouvernerat: "Tunis",
+    ville: "Marsa",
+    typebien: "appartement",
+    type: "louer",
     image: img4
   },
   {
-    ville: "Gammarth",
-    type: "villa",
-    nbr_chambre: 2,
+    gouvernerat: "Tunis",
+    ville: "Sidi Bou Said",
+    typebien: "villa",
+    type: "vendre",
     image: img5
   },
 
   {
-    ville: "Gammarth",
-    type: "villa",
-    nbr_chambre: 2,
+    gouvernerat: "Tunis",
+    ville: "Sidi Bou Said",
+    typebien: "appartement",
+    type: "vendre",
     image: img6
-  }
-];
-
-export const ville = [
-  {
-    name: "Tunis",
-    options: [
-      "Bardo",
-      "LaGoulette",
-      "Carthage",
-      "Marsa",
-      "Gammarth",
-      "Menzah",
-      "Manar2"
-    ]
   }
 ];
