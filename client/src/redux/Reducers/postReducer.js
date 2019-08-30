@@ -1,5 +1,6 @@
+import { house } from "../../data";
 const initialState = {
-  annonces: []
+  annonces: house
 };
 
 export default function(state = initialState, action) {

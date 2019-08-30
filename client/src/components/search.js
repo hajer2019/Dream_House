@@ -16,28 +16,12 @@ class Search extends React.Component {
 
   onChange = e => {
     this.setState({ [e.target.name]: e.target.value });
+    console.log(this.state.villes);
   };
 
   onSubmit = e => {
     e.preventDefault();
-    const annoInfo = {
-      gouvernerat: this.state.gouvernerat,
-      villes: this.state.villes,
-      services: this.state.services,
-      TypeBiens: this.state.TypeBiens
-    };
-
-    console.log("before search", this.state.house);
-
-    this.setState(
-      {
-        house: this.state.house.filter((e, i) => e.ville === annoInfo.villes)
-      },
-      () => (
-        console.log("after search", this.state.house),
-        console.log("parametre", annoInfo.villes)
-      )
-    );
+    this.props.search(this.state.villes);
   };
   render() {
     const { search, value, house } = this.props;
@@ -50,7 +34,7 @@ class Search extends React.Component {
               <i className="fa fa-search"></i>Recherche Rapide
             </h3>
           </div>
-          <form action="" method="GET" name="search" role="search">
+          <form name="search" role="search">
             <div className="inp-wrap search-wrap">
               <select
                 style={{ width: "200px" }}
@@ -76,7 +60,9 @@ class Search extends React.Component {
                 type="text"
                 name="villes"
                 value={this.state.villes}
-                onChange={this.onChange}
+                onChange={e => {
+                  this.onChange(e);
+                }}
                 id="villes"
                 class="grid-80"
                 placeholder="saisir votre ville"
@@ -148,12 +134,12 @@ const mapStateToProps = state => ({
   house: state.reducerSearch.house
 });
 
-const mapDispatchToProps = dispatch => ({
-  // return bindActionCreators({ search }, dispatch);
-  search: searchValue => dispatch(search(searchValue))
-});
+// const mapDispatchToProps = dispatch => ({
+//   // return bindActionCreators({ search }, dispatch);
+//   search: searchValue => dispatch(search(searchValue))
+// });
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  { search }
 )(Search);

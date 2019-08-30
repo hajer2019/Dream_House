@@ -1,15 +1,14 @@
 import { house } from "../../data";
 
-const initialState = { house: house };
+const initialState = { ville: "" };
 
 export default function reducer(state = initialState, action) {
   switch (action.type) {
-    case "SEARCH": {
+    case "SEARCH":
       return {
         ...state,
-        house: state.house.filter((e, i) => e.ville === action.payload.villes)
+        ville: action.payload
       };
-    }
     default:
       return state;
   }

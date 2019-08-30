@@ -1,3 +1,3 @@
-export function search(value) {
-  return { type: "SEARCH", payload: value };
-}
+export const search = value => dispatch => {
+  dispatch({ type: "SEARCH", payload: value });
+};
