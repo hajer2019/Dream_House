@@ -1,10 +1,14 @@
 import React, { Component } from "react";
+
 import { connect } from "react-redux";
 
 class AnnoncesList extends Component {
   constructor(props) {
     super(props);
   }
+
+import AnnonceInfo from "./AnnonceInfo";
+import image1 from "../../images/img1.jpg";
 
   render() {
     return (
