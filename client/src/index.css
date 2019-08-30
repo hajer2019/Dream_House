@@ -311,3 +311,6 @@ h4 {
 .card-info-container {
   min-height: 500px !important;
 }
+.annonce-list-img {
+  min-height: 194px !important;
+}

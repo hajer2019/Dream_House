@@ -1,6 +1,8 @@
 import React, { Component } from "react";
+import { userSignin } from "../../redux/Actions/userActions";
+import { connect } from "react-redux";
 
-export default class Login extends Component {
+class Login extends Component {
   constructor() {
     super();
     this.state = {
@@ -18,6 +20,7 @@ export default class Login extends Component {
       password: this.state.password
     };
     console.log(userInfo);
+    this.props.userSignin(userInfo);
   };
   render() {
     return (
@@ -50,7 +53,7 @@ export default class Login extends Component {
                     <br />
                     <input
                       onChange={this.onChange}
-                      type="text"
+                      type="password"
                       name="password"
                       className="form-control form-control-login"
                     />
@@ -76,3 +79,8 @@ export default class Login extends Component {
     );
   }
 }
+
+export default connect(
+  null,
+  { userSignin }
+)(Login);
