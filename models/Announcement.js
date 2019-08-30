@@ -3,28 +3,28 @@ const Schema = mongoose.Schema;
 
 const AnnouncSchema = new Schema({
   type: {
-    type: String,
-    required: true
+    type: String
+    //required: true
   },
   service: {
-    type: String,
-    required: true
+    type: String
+    // required: true
   },
   adresse: {
-    type: String,
-    required: true
+    type: String
+    // required: true
   },
   chambre: {
-    type: Number,
-    required: true
+    type: Number
+    // required: true
   },
   lit: {
-    type: Number,
-    required: true
+    type: Number
+    // required: true
   },
   prix: {
-    type: Number,
-    required: true
+    type: Number
+    //required: true
   },
 
   disponibilité: {

@@ -1,4 +1,6 @@
 import React from "react";
+import { addPost } from "../redux/Actions/postActions";
+import { connect } from "react-redux";
 import {
   Card,
   Col,
@@ -11,7 +13,7 @@ import {
   InputGroupAddon
 } from "reactstrap";
 
-export default class Add extends React.Component {
+class Add extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -23,11 +25,19 @@ export default class Add extends React.Component {
       nbrLit: "",
       nbrChambre: "",
       prix: "",
-      description: ""
+      description: "",
+      image: []
     };
   }
   onChange = e => {
     this.setState({ [e.target.name]: e.target.value });
+  };
+  handleimage = e => {
+    let formdata = new FormData();
+    formdata.append("image", e.target.files[0], e.target.files[0].name);
+
+    this.setState({ image: formdata });
+    console.log(this.state.image);
   };
   onSubmit = e => {
     e.preventDefault();
@@ -42,6 +52,7 @@ export default class Add extends React.Component {
       prix: this.state.prix,
       description: this.state.description
     };
+    this.props.addPost(newAnnouc);
     console.log(newAnnouc);
   };
   render() {
@@ -57,7 +68,7 @@ export default class Add extends React.Component {
           </FormGroup>
           <FormGroup className="formfield" row>
             <Label for="exampleSelect" sm={2}>
-              Catégorie
+              Type
             </Label>
             <Col sm={4}>
               <Input
@@ -68,13 +79,14 @@ export default class Add extends React.Component {
               >
                 <option selected>Choisir</option>
                 <option value="A vendre">A vendre</option>
+                <option value="A vendre">A acheter</option>
                 <option value="A louer">A louer</option>
               </Input>
             </Col>
           </FormGroup>
           <FormGroup className="formfield" row>
             <Label for="exampleSelect" sm={2}>
-              Adresse
+              Adresse/Ville
             </Label>
             <Col sm={5}>
               <Input
@@ -82,25 +94,23 @@ export default class Add extends React.Component {
                 type="text"
                 name="adresse"
                 id="exampleCity"
-                placeholder="Rue/route"
+                placeholder="ville"
               />
             </Col>
-            <Col sm={3}>
+            {/* <Col sm={3}>
               <Input
                 onChange={this.onChange}
                 type="select"
                 name="ville"
                 id="exampleSelect"
               >
-                <option selected> ville</option>
-                <option value="1">A vendre</option>
-                <option value="2">A louer</option>
+            
               </Input>
-            </Col>
+            </Col> */}
           </FormGroup>
           <FormGroup className="formfield" row>
             <Label for="exampleSelect" sm={2}>
-              Type bien
+              Type de bien
             </Label>
             <Col sm={4}>
               <Input
@@ -111,8 +121,13 @@ export default class Add extends React.Component {
               >
                 <option selected>Choisir</option>
                 <option value="1">Appartement</option>
-                <option value="2">Maison</option>
-                <option value="3">Studio</option>
+                <option value="2">Villa</option>
+                <option value="3">Maison</option>
+                <option value="4">Studio</option>
+                <option value="5">Commercial</option>
+                <option value="6">Duplex</option>
+                <option value="7">Terrain</option>
+                <option value="8"> Fonds de commerce</option>
               </Input>
             </Col>
           </FormGroup>
@@ -149,7 +164,7 @@ export default class Add extends React.Component {
             <Label for="exampleText" sm={2}>
               Prix
             </Label>
-            <Col sm={8}>
+            <Col sm={6}>
               <InputGroup>
                 <Input
                   onChange={this.onChange}
@@ -168,7 +183,7 @@ export default class Add extends React.Component {
             <Col sm={8}>
               <InputGroup>
                 <Input
-                  onChange={this.onChange}
+                  onChange={this.handleimage}
                   type="file"
                   name="image"
                   id="image"
@@ -206,3 +221,8 @@ export default class Add extends React.Component {
     );
   }
 }
+
+export default connect(
+  null,
+  { addPost }
+)(Add);
