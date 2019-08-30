@@ -4,9 +4,10 @@ const mongoose = require("mongoose");
 const userRoute = require("./Routes/userRoutes");
 const announcRoute = require("./Routes/announnementRoutes");
 const passport = require("passport");
+const cors = require("cors");
 
 const app = express();
-
+app.use(cors());
 // BodyParser middleware
 //app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.json());
@@ -15,10 +16,7 @@ app.use(express.json());
 app.use("/api", userRoute);
 
 // Announc route middleware
-app.use(
-  "/api",
-  /*passport.authenticate("jwt", { session: false }),*/ announcRoute
-);
+app.use("/api", announcRoute);
 
 //passport Midleware
 app.use(passport.initialize());

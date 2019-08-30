@@ -5,6 +5,11 @@ import { connect } from "react-redux";
 import AnnonceInfo from "./AnnonceInfo";
 import image1 from "../../images/img1.jpg";
 
+
+import AnnonceInfo from "./AnnonceInfo";
+import image1 from "../../images/img1.jpg";
+
+
 class AnnoncesList extends Component {
   constructor(props) {
     super(props);
@@ -26,7 +31,11 @@ class AnnoncesList extends Component {
         <div className="w-75 mt-4 container cards-container">
           {filteredAd.map(e => (
             <div class="card annonce-card ">
-              <img src={e.image} class="card-img-top" alt="..." />
+              <img
+                src={e.image}
+                class="card-img-top annonce-list-img"
+                alt="..."
+              />
               <div class="card-body">
                 <h5 class="card-title card-title-annonce">
                   Family Home for sale

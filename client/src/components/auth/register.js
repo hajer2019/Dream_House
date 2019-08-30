@@ -1,10 +1,15 @@
 import React, { Component } from "react";
-
-export default class Loginn extends Component {
+import { connect } from "react-redux";
+import { userSignup } from "../../redux/Actions/userActions";
+class Loginn extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {};
+    this.state = {
+      name: "",
+      email: "",
+      password: ""
+    };
   }
   onChange = e => {
     this.setState({ [e.target.id]: e.target.value });
@@ -16,7 +21,7 @@ export default class Loginn extends Component {
       email: this.state.email,
       password: this.state.password
     };
-    console.log(newUser);
+    this.props.userSignup(newUser);
   };
 
   render() {
@@ -84,3 +89,8 @@ export default class Loginn extends Component {
     );
   }
 }
+
+export default connect(
+  null,
+  { userSignup }
+)(Loginn);

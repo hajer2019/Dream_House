@@ -1,6 +1,6 @@
 import axios from "axios";
-import setAuth from "../../utils/setAuth";
-import jwt from "jwt-decode";
+//import setAuth from "../../utils/setAuth";
+//import jwt from "jwt-decode";
 
 export const userSignup = user => dispatch => {
   const config = {
@@ -9,7 +9,7 @@ export const userSignup = user => dispatch => {
     }
   };
 
-  axios.post("/api/user/register", user, config).then(res =>
+  axios.post("api/user/register", user, config).then(res =>
     dispatch({
       type: "SIGN_UP",
       payload: res.data
@@ -27,8 +27,8 @@ export const userSignin = data => dispatch => {
   axios.post("/api/user/login", data, config).then(res => {
     const token = res.data.token;
     localStorage.setItem("jwtToken", token);
-    setAuth(token);
-    dispatch(setUser(jwt(token)));
+    //setAuth(token);
+    //dispatch(setUser(jwt(token)));
   });
 };
 
