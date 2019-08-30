@@ -6,30 +6,27 @@ class Search extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      house: this.props.house,
-      villes: "",
+      ville: "",
       gouvernerat: "",
-      services: "",
-      TypeBiens: ""
+      type: "",
+      typebien: ""
     };
   }
 
-  onChange = e => {
+  handleChange = e => {
     this.setState({ [e.target.name]: e.target.value });
-    console.log(this.state.villes);
   };
 
   onSubmit = e => {
     e.preventDefault();
-    this.props.search(this.state.villes);
+    this.props.search(this.state);
   };
   render() {
-    const { search, value, house } = this.props;
+    const { search, value } = this.props;
     return (
       <div>
         <section class="search-form">
           <div>
-            {" "}
             <h3 className="search-heading">
               <i className="fa fa-search"></i>Recherche Rapide
             </h3>
@@ -41,10 +38,9 @@ class Search extends React.Component {
                 name="gouvernerat"
                 id="gouvernerat"
                 class="grid-80"
-                onChange={this.onChange}
+                onChange={this.handleChange}
               >
-                <option value="Tunis" selected>
-                  {" "}
+                <option value={this.state.gouvernerat} selected>
                   Choisir un gouvernerat
                 </option>
                 <option value="Ben Arous"> Tunis </option>
@@ -58,12 +54,10 @@ class Search extends React.Component {
               <input
                 style={{ width: "200px" }}
                 type="text"
-                name="villes"
-                value={this.state.villes}
-                onChange={e => {
-                  this.onChange(e);
-                }}
-                id="villes"
+                name="ville"
+                value={this.state.ville}
+                onChange={this.handleChange}
+                id="ville"
                 class="grid-80"
                 placeholder="saisir votre ville"
               />
@@ -72,14 +66,13 @@ class Search extends React.Component {
             <div className="inp-wrap cat-wrap">
               <select
                 style={{ width: "200px" }}
-                name="services"
-                id="services"
+                name="type"
+                id="type"
                 class="grid-80"
-                onChange={this.onChange}
+                onChange={this.handleChange}
               >
-                <option value="Type" selected>
-                  {" "}
-                  Type{" "}
+                <option value="type" selected>
+                  Type
                 </option>
                 <option value="Louer"> Louer </option>
                 <option value="Vendre"> Vendre </option>
@@ -89,8 +82,9 @@ class Search extends React.Component {
 
             <div className="inp-wrap cat-wrap">
               <select
-                name="TypeBiens"
-                id="TypeBiens"
+                onChange={this.handleChange}
+                name="typebien"
+                id="typebien"
                 class="grid-80"
                 style={{ width: "200px" }}
               >
@@ -130,9 +124,9 @@ class Search extends React.Component {
   }
 }
 
-const mapStateToProps = state => ({
-  house: state.reducerSearch.house
-});
+// const mapStateToProps = state => ({
+//   house: state.reducerSearch.house
+// });
 
 // const mapDispatchToProps = dispatch => ({
 //   // return bindActionCreators({ search }, dispatch);
@@ -140,6 +134,6 @@ const mapStateToProps = state => ({
 // });
 
 export default connect(
-  mapStateToProps,
+  null,
   { search }
 )(Search);
