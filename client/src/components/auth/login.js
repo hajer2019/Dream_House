@@ -41,7 +41,7 @@ class Login extends Component {
                     <br />
                     <input
                       onChange={this.onChange}
-                      type="text"
+                      type="email"
                       name="email"
                       className=" form-control form-control-login"
                     />

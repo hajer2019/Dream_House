@@ -9,12 +9,12 @@ export const addPost = post => dispatch => {
   };
 
   axios
-    .post("http://localhost:5000/api/annonce/ajouter", post, config)
+    .post("/api/annonce/ajouter", post, config)
     .then(res => dispatch(getPosts()));
 };
 
 export const getPosts = () => dispatch => {
-  axios.get("http://localhost:5000/api/annonce").then(res =>
+  axios.get("/api/annonce").then(res =>
     dispatch({
       type: "GET_POSTS",
       payload: res.data
