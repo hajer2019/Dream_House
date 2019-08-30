@@ -2,8 +2,9 @@ import React, { Component } from "react";
 
 import { connect } from "react-redux";
 
-// import AnnonceInfo from "./AnnonceInfo";
-// import image1 from "../../images/img1.jpg";
+import AnnonceInfo from "./AnnonceInfo";
+import image1 from "../../images/img1.jpg";
+
 
 class AnnoncesList extends Component {
   constructor(props) {

@@ -6,22 +6,34 @@ const router = express.Router();
 // Ajouter une annoce
 // Post request /api/annonce/ajouter
 
-router.post("/annonce/ajouter", (req, res) => {
-  const { service, prix, disponibilité, chambre, lit, adresse } = req.body;
-  const newAnnounc = new Announc({
-    service,
-    prix,
-    disponibilité,
-    chambre,
-    lit,
-    adresse
-  });
+router.post(
+  "/annonce/ajouter",
+  /*passport.authenticate("jwt", { session: false })*/ (req, res) => {
+    const {
+      ville,
+      prix,
+      categorie,
+      chambre,
+      lit,
+      adresse,
+      description
+    } = req.body;
+    const newAnnounc = new Announc({
+      ville,
+      prix,
+      categorie,
+      chambre,
+      lit,
+      adresse,
+      description
+    });
 
-  newAnnounc
-    .save()
-    .then(saved => res.json({ new: newAnnounc }))
-    .catch(err => console.log(err));
-});
+    newAnnounc
+      .save()
+      .then(saved => res.json({ new: newAnnounc }))
+      .catch(err => console.log(err));
+  }
+);
 
 // Trouver tous les Annonces
 // Get request /api/annonce
