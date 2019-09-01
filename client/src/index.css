@@ -313,3 +313,18 @@ h4 {
 .annonce-list-img {
   min-height: 194px !important;
 }
+@media (min-width: 768px) {
+  .site-section {
+    padding: 7em 0;
+  }
+}
+.site-section.site-section-sm {
+  padding: 4em 0;
+}
+
+.annonce-info-img {
+  min-width: 729px;
+}
+.property-body {
+  padding: 40px;
+}
