@@ -21,3 +21,12 @@ export const getPosts = () => dispatch => {
     })
   );
 };
+
+export const getPost = id => dispatch => {
+  axios.get("/api/annonce/" + id).then(res =>
+    dispatch({
+      type: "GET_POST",
+      payload: res.data
+    })
+  );
+};

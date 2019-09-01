@@ -19,8 +19,7 @@ function App() {
         <Route path="/add" component={Add} />
         <Route path="/login" component={Login} />
         <Route path="/register" component={Register} />
-        <Route path="/annonce" component={AnnonceInfo} />
-
+        <Route path="/:annonce_id" component={AnnonceInfo} />
         <Footer />
       </div>
     </BrowserRouter>

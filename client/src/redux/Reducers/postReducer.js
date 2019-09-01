@@ -1,6 +1,7 @@
 import { house } from "../../data";
 const initialState = {
-  annonces: house
+  annonces: house,
+  annonce: {}
 };
 
 export default function(state = initialState, action) {
@@ -14,6 +15,11 @@ export default function(state = initialState, action) {
       return {
         ...state,
         annonces: [...state.annonces, action.payload]
+      };
+    case "GET_POST":
+      return {
+        ...state,
+        annonce: action.payload
       };
     default:
       return state;
