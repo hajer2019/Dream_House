@@ -12,6 +12,8 @@ app.use(cors());
 //app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.json());
 
+app.use("/uploads", express.static("uploads"));
+
 // Users route middleware
 app.use("/api", userRoute);
 
