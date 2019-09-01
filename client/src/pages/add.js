@@ -2,7 +2,6 @@ import React from "react";
 import { addPost } from "../redux/Actions/postActions";
 import { connect } from "react-redux";
 import {
-  Card,
   Col,
   Button,
   Form,
@@ -17,43 +16,41 @@ class Add extends React.Component {
   constructor() {
     super();
     this.state = {
-      catégorie: "",
-      adresse: "",
+      categorie: "",
       ville: "",
-      zip: "",
-      type: "",
-      nbrLit: "",
-      nbrChambre: "",
+      gouvernerat: "",
+      typebien: "",
+      lit: "",
+      chambre: "",
       prix: "",
       description: "",
-      image: []
+      image: null
     };
   }
+  onChangeImage = e => {
+    this.setState({
+      image: e.target.files[0]
+    });
+    console.log(this.state.image);
+  };
   onChange = e => {
     this.setState({ [e.target.name]: e.target.value });
   };
-  handleimage = e => {
-    let formdata = new FormData();
-    formdata.append("image", e.target.files[0], e.target.files[0].name);
 
-    this.setState({ image: formdata });
-    console.log(this.state.image);
-  };
-  onSubmit = e => {
-    e.preventDefault();
-    const newAnnouc = {
-      catégorie: this.state.catégorie,
-      adresse: this.state.adresse,
-      ville: this.state.ville,
-      zip: this.state.zip,
-      type: this.state.type,
-      nbrLit: this.state.nbrLit,
-      nbrChambre: this.state.nbrChambre,
-      prix: this.state.prix,
-      description: this.state.description
-    };
-    this.props.addPost(newAnnouc);
-    console.log(newAnnouc);
+  onSubmit = () => {
+    const newdata = new FormData();
+    newdata.append("ville", this.state.ville);
+    newdata.append("categorie", this.state.categorie);
+    newdata.append("gouvernerat", this.state.gouvernerat);
+    newdata.append("typebien", this.state.typebien);
+    newdata.append("lit", this.state.lit);
+    newdata.append("chambre", this.state.chambre);
+    newdata.append("prix", this.state.prix);
+    newdata.append("description", this.state.description);
+    newdata.append("image", this.state.image);
+
+    this.props.addPost(newdata);
+    console.log(newdata);
   };
   render() {
     return (
@@ -74,12 +71,11 @@ class Add extends React.Component {
               <Input
                 onChange={this.onChange}
                 type="select"
-                name="catégorie"
+                name="categorie"
                 id="exampleSelect"
               >
                 <option selected>Choisir</option>
                 <option value="A vendre">A vendre</option>
-                <option value="A vendre">A acheter</option>
                 <option value="A louer">A louer</option>
               </Input>
             </Col>
@@ -92,21 +88,22 @@ class Add extends React.Component {
               <Input
                 onChange={this.onChange}
                 type="text"
-                name="adresse"
+                name="ville"
                 id="exampleCity"
                 placeholder="ville"
               />
             </Col>
-            {/* <Col sm={3}>
+            <Label for="exampleSelect" sm={2}>
+              Gouvernerat
+            </Label>
+            <Col sm={3}>
               <Input
                 onChange={this.onChange}
-                type="select"
-                name="ville"
+                type="text"
+                name="gouvernerat"
                 id="exampleSelect"
-              >
-            
-              </Input>
-            </Col> */}
+              ></Input>
+            </Col>
           </FormGroup>
           <FormGroup className="formfield" row>
             <Label for="exampleSelect" sm={2}>
@@ -116,18 +113,15 @@ class Add extends React.Component {
               <Input
                 onChange={this.onChange}
                 type="select"
-                name="type"
+                name="typebien"
                 id="exampleSelect"
               >
                 <option selected>Choisir</option>
-                <option value="1">Appartement</option>
-                <option value="2">Villa</option>
-                <option value="3">Maison</option>
-                <option value="4">Studio</option>
-                <option value="5">Commercial</option>
-                <option value="6">Duplex</option>
-                <option value="7">Terrain</option>
-                <option value="8"> Fonds de commerce</option>
+                <option value="Appartement">Appartement</option>
+                <option value="Villa">Villa</option>
+                <option value="Maison">Maison</option>
+                <option value="Studio">Studio</option>
+                <option value="Fonds de commerce"> Fonds de commerce</option>
               </Input>
             </Col>
           </FormGroup>
@@ -183,7 +177,7 @@ class Add extends React.Component {
             <Col sm={8}>
               <InputGroup>
                 <Input
-                  onChange={this.handleimage}
+                  onChange={this.onChangeImage}
                   type="file"
                   name="image"
                   id="image"

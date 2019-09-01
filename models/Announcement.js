@@ -2,13 +2,19 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const AnnouncSchema = new Schema({
-  type: {
+  ville: {
     type: String
     //required: true
   },
-  service: {
+  gouvernerat: {
+    type: String
+  },
+  categorie: {
     type: String
     // required: true
+  },
+  typebien: {
+    type: String
   },
   adresse: {
     type: String
@@ -26,11 +32,11 @@ const AnnouncSchema = new Schema({
     type: Number
     //required: true
   },
-
-  disponibilité: {
-    type: Date,
-    default: Date.now,
-    required: false
+  image: {
+    type: String
+  },
+  description: {
+    type: String
   }
 });
 

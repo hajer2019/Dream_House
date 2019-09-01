@@ -4,7 +4,7 @@ export const addPost = post => dispatch => {
   //const newPost = JSON.stringify(post);
   const config = {
     headers: {
-      "Content-Type": "application/json"
+      "Content-Type": "form-data"
     }
   };
 

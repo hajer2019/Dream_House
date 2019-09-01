@@ -1,14 +1,15 @@
 const express = require("express");
 const Announc = require("../models/Announcement");
+const multer = require("multer");
 
 const router = express.Router();
 
 // Ajouter une annoce
 // Post request /api/annonce/ajouter
 
-router.post(
-  "/annonce/ajouter",
-  /*passport.authenticate("jwt", { session: false })*/ (req, res) => {
+{
+  /*router.post(
+  "/annonce/ajouter", (req, res) => {
     const {
       ville,
       prix,
@@ -16,7 +17,8 @@ router.post(
       chambre,
       lit,
       adresse,
-      description
+      description,
+      typebien
     } = req.body;
     const newAnnounc = new Announc({
       ville,
@@ -25,7 +27,8 @@ router.post(
       chambre,
       lit,
       adresse,
-      description
+      description,
+      typebien
     });
 
     newAnnounc
@@ -33,7 +36,40 @@ router.post(
       .then(saved => res.json({ new: newAnnounc }))
       .catch(err => console.log(err));
   }
-);
+);*/
+}
+
+router.post("/annonce/ajouter", (req, res) => {
+  const storage = multer.diskStorage({
+    destination: function(req, file, cb) {
+      cb(null, "./uploads/");
+    },
+    filename: function(req, file, cb) {
+      cb(null, file.originalname);
+    }
+  });
+  const upload = multer({ storage: storage }).single("image");
+  upload(req, res, function(err) {
+    if (err) {
+      console.log(err);
+    }
+    //console.log(req.body);
+    //console.log(req.file);
+    const newAnnounc = new Announc({
+      ville: req.body.ville,
+      prix: req.body.prix,
+      categorie: req.body.categorie,
+      chambre: req.body.chambre,
+      lit: req.body.lit,
+      gouvernerat: req.body.gouvernerat,
+      description: req.body.description,
+      typebien: req.body.typebien,
+      image: req.file.path
+    });
+    console.log(newAnnounc);
+    newAnnounc.save();
+  });
+});
 
 // Trouver tous les Annonces
 // Get request /api/annonce
@@ -41,6 +77,14 @@ router.post(
 router.get("/annonce", (req, res) => {
   Announc.find()
     .then(annonces => res.json(annonces))
+    .catch(err => res.send("cannot get"));
+});
+
+// Trouver une annonce par id
+// Get request /api/annonce/id
+router.get("/api/annonce/:id", (req, res) => {
+  Announc.findById(req.params.id)
+    .then(contacts => res.json(contacts))
     .catch(err => res.send("cannot get"));
 });
 
