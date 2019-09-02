@@ -6,9 +6,10 @@ function Footer() {
     <div className="footer">
       <div className="">Tous les droits reservés</div>
       <div className="liens">
-        <Link to="/home"> Accueil</Link> | <Link to="contact">Contact</Link> |{" "}
-        <Link to="/login"> Connexion </Link> |{" "}
-        <Link to="/register">Inscription</Link>
+        <Link to="/"> Accueil</Link> |
+        <Link to="/aboutus">A propos de nous</Link> |{" "}
+        <Link to="contact">Contact</Link>| <Link to="/login"> Connexion </Link>{" "}
+        | <Link to="/register">Inscription</Link>
       </div>
       <div className="socialmedia">
         <div id="sidebar" className="desktop-only" style={{ opacity: 1 }}>
