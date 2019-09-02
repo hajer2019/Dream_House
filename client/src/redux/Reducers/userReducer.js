@@ -10,11 +10,16 @@ export default function(state = initialState, action) {
         ...state
       };
     case "SET_USER":
-      return {
-        ...state,
-        isAuth: true,
-        user: action.user
-      };
+      if (action.payload) {
+        return {
+          ...state,
+          isAuth: true
+        };
+      } else {
+        return {
+          ...state
+        };
+      }
     default:
       return state;
   }
