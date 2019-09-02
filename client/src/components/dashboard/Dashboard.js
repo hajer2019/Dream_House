@@ -5,11 +5,11 @@ import Collection from "./Collection";
 import AddPost from "./addPost";
 function Dashboard() {
   return (
-    <div className="dashboard  row d-flex justify-content-between">
-      <div className=" menu-container col-3">
+    <div className="dashboard  row d-flex ">
+      <div className=" menu-container col-2">
         <DashboardMenu />
       </div>
-      <div className="dashboard-content col-9">
+      <div className="dashboard-content mr-4 col-9">
         <Profile />
         <Collection />
       </div>

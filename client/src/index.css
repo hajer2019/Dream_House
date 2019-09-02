@@ -370,13 +370,13 @@ h4 {
 
 .dashboard-menu-link {
   height: 50px;
-  width: 220px;
+
   padding: 13px 13px;
   border-bottom: solid 1px #dddddd;
   font-weight: 600;
 }
 .dashboard-content {
-  background-color: #f4f3ef;
+  background-color: white;
 }
 .profile-content {
   margin-top: 20px;
@@ -388,11 +388,8 @@ h4 {
   padding: 10px 0px;
   font-weight: 600;
 }
-.collection-items {
-  max-width: 100%;
-}
-.collection-item {
-  width: 260px;
-  height: 278px;
-  margin-top: 10px;
+
+.dashboard-card {
+  max-width: 258px;
+  margin-top: 15px;
 }
