@@ -1,10 +1,6 @@
 import React, { Component } from "react";
-
+import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-
-import AnnonceInfo from "./AnnonceInfo";
-import image1 from "../../images/img1.jpg";
-
 
 class AnnoncesList extends Component {
   constructor(props) {
@@ -26,23 +22,25 @@ class AnnoncesList extends Component {
       <div>
         <div className="w-75 mt-4 container cards-container">
           {filteredAd.map(e => (
-            <div class="card annonce-card ">
-              <img
-                src={e.image}
-                class="card-img-top annonce-list-img"
-                alt="..."
-              />
-              <div class="card-body">
-                <h5 class="card-title card-title-annonce">
-                  Family Home for sale
-                </h5>
-                <p class="card-text">
-                  <i class="fas fa-map-marker-alt"></i> {e.ville}
-                </p>
-                <p class="card-text">{e.typebien}</p>
-                <p class="card-text">{e.type}</p>
+            <Link to={"/" + e._id}>
+              <div class="card annonce-card ">
+                <img
+                  src={e.image}
+                  class="card-img-top annonce-list-img"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title card-title-annonce">
+                    Family Home for sale
+                  </h5>
+                  <p class="card-text">
+                    <i class="fas fa-map-marker-alt"></i> {e.ville}
+                  </p>
+                  <p class="card-text">{e.typebien}</p>
+                  <p class="card-text">{e.type}</p>
+                </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
         <div className="mt-3 mx-auto" style={{ width: "10%" }}>

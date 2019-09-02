@@ -1,16 +1,18 @@
 import Contactuser from "./Contactuser";
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import { getPost } from "../../redux/Actions/postActions";
 
-export default class AnnonceInfo extends Component {
+class AnnonceInfo extends Component {
   constructor(props) {
     super(props);
   }
 
-  //componentDidMount() {
-  //  console.log(this.props);
-  //  let id = this.props.match.params.post_id;
-
-  //}
+  componentDidMount() {
+    let id = this.props.match.params.annonce_id;
+    //console.log(id);
+    //this.props.getPost(id);
+  }
   render() {
     return (
       <div class="site-section site-section-sm">
@@ -93,3 +95,8 @@ export default class AnnonceInfo extends Component {
     );
   }
 }
+
+export default connect(
+  null,
+  { getPost }
+)(AnnonceInfo);

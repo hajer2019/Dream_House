@@ -351,3 +351,48 @@ h4 {
   -ms-transform: scale(1.05);
   transform: scale(1.05);
 }
+.dashboard {
+  padding: 0px;
+  margin-top: 70px;
+}
+.menu-container {
+  padding: 0px;
+  height: 500px;
+}
+.dashboard-menu {
+  position: fixed;
+  list-style: none;
+  padding: 0px 15px;
+}
+.dashboard-menu i {
+  padding-right: 5px;
+}
+
+.dashboard-menu-link {
+  height: 50px;
+  width: 220px;
+  padding: 13px 13px;
+  border-bottom: solid 1px #dddddd;
+  font-weight: 600;
+}
+.dashboard-content {
+  background-color: #f4f3ef;
+}
+.profile-content {
+  margin-top: 20px;
+  margin-right: 10px;
+}
+.profile-header {
+  background-color: none !important;
+  border: none;
+  padding: 10px 0px;
+  font-weight: 600;
+}
+.collection-items {
+  max-width: 100%;
+}
+.collection-item {
+  width: 260px;
+  height: 278px;
+  margin-top: 10px;
+}
