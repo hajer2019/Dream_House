@@ -20,7 +20,6 @@ class Login extends Component {
       email: this.state.email,
       password: this.state.password
     };
-    console.log(userInfo);
     this.props.userSignin(userInfo);
   };
   render() {
@@ -80,8 +79,13 @@ class Login extends Component {
     );
   }
 }
+const mapStateToProps = state => {
+  return {
+    isAuth: state.userReducer.isAuth
+  };
+};
 
 export default connect(
-  null,
+  mapStateToProps,
   { userSignin }
 )(Login);

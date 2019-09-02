@@ -33,19 +33,23 @@ class AnnonceInfo extends Component {
               <div class="bg-white property-body border-bottom border-left border-right">
                 <div class="row mb-5">
                   <div class="col-md-6">
-                    <strong class="text-success h1 mb-3">Ville</strong>
+                    <strong class="text-success h1 mb-3">
+                      {this.props.annonce.ville}
+                    </strong>
                   </div>
                   <div class="col-md-6">
                     <ul class="property-specs-wrap mb-3 mb-lg-0  float-lg-right">
                       <li>
-                        <span class="property-specs">Beds</span>
+                        <span class="property-specs">Chambres</span>
                         <span class="property-specs-number">
-                          2 <sup>+</sup>
+                          {this.props.annonce.chambre}
                         </span>
                       </li>
                       <li>
-                        <span class="property-specs">Baths</span>
-                        <span class="property-specs-number">2</span>
+                        <span class="property-specs">Lit</span>
+                        <span class="property-specs-number">
+                          {this.props.annonce.lit}
+                        </span>
                       </li>
                     </ul>
                   </div>
@@ -53,40 +57,21 @@ class AnnonceInfo extends Component {
                 <div class="row mb-5">
                   <div class="col-md-6 col-lg-4 text-center border-bottom border-top py-3">
                     <span class="d-inline-block text-black mb-0 caption-text">
-                      Home Type
+                      {this.props.annonce.typebien}
                     </span>
-                    <strong class="d-block">Condo</strong>
                   </div>
                   <div class="col-md-6 col-lg-4 text-center border-bottom border-top py-3">
                     <span class="d-inline-block text-black mb-0 caption-text">
-                      Year Built
+                      Ville
                     </span>
-                    <strong class="d-block">2018</strong>
+                    <strong class="d-block">{this.props.annonce.ville}</strong>
                   </div>
                   <div class="col-md-6 col-lg-4 text-center border-bottom border-top py-3">
                     <Contactuser />
                   </div>
                 </div>
                 <h2 class="h4 text-black">Description</h2>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Assumenda aperiam perferendis deleniti vitae asperiores
-                  accusamus tempora facilis sapiente, quas! Quos asperiores
-                  alias fugiat sunt tempora molestias quo deserunt similique
-                  sequi.
-                </p>
-                <p>
-                  Nisi voluptatum error ipsum repudiandae, autem deleniti, velit
-                  dolorem enim quaerat rerum incidunt sed, qui ducimus! Tempora
-                  architecto non, eligendi vitae dolorem laudantium dolore
-                  blanditiis assumenda in eos hic unde.
-                </p>
-                <p>
-                  Voluptatum debitis cupiditate vero tempora error fugit
-                  aspernatur sint veniam laboriosam eaque eum, et hic odio
-                  quibusdam molestias corporis dicta! Beatae id magni,
-                  laudantium nulla iure ea sunt aliquam. A.
-                </p>
+                <p>{this.props.annonce.description}</p>
               </div>
             </div>
           </div>
