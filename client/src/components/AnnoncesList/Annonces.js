@@ -7,6 +7,10 @@ import { Link } from "react-router-dom";
 class AnnoncesList extends Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      visible: 2
+    };
   }
 
   handleClick = id => {
@@ -15,7 +19,11 @@ class AnnoncesList extends Component {
   componentWillMount() {
     this.props.getPosts();
   }
-
+  loadMore = () => {
+    this.setState(prev => {
+      return { visible: prev.visible + 4 };
+    });
+  };
   render() {
     const { annonces, ville, gouvernerat, type, typebien } = this.props;
 
@@ -32,7 +40,7 @@ class AnnoncesList extends Component {
     return (
       <div>
         <div className="w-75 mt-4 container cards-container">
-          {annonces.map(el => (
+          {annonces.slice(0, this.state.visible).map(el => (
             <Link to={"/" + el._id}>
               <div key={el._id} class="card annonce-card ">
                 <img
@@ -55,7 +63,9 @@ class AnnoncesList extends Component {
           ))}
         </div>
         <div className="mt-3 mx-auto" style={{ width: "10%" }}>
-          <button className=" load-more-button mx-auto">Load more</button>
+          <button onClick={this.loadMore} className=" load-more-button mx-auto">
+            Load more
+          </button>
         </div>
       </div>
     );
