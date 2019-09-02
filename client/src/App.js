@@ -7,6 +7,7 @@ import Add from "./pages/add";
 import Login from "./components/auth/login";
 import Register from "./components/auth/register";
 import AnnonceInfo from "./components/AnnoncesList/AnnonceInfo";
+import AboutUs from "./pages/AboutUs";
 
 import { BrowserRouter, Route } from "react-router-dom";
 function App() {
@@ -19,7 +20,9 @@ function App() {
         <Route path="/add" component={Add} />
         <Route path="/login" component={Login} />
         <Route path="/register" component={Register} />
-        <Route path="/:annonce_id" component={AnnonceInfo} />
+        <Route path="/annonceinfo" component={AnnonceInfo} />
+        <Route path="/aboutus" component={AboutUs} />
+
         <Footer />
       </div>
     </BrowserRouter>

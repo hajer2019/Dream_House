@@ -328,3 +328,26 @@ h4 {
 .property-body {
   padding: 40px;
 }
+.room {
+  position: relative;
+  display: block;
+}
+.room .img-wrap {
+  position: relative;
+  overflow: hidden;
+}
+.room .img-wrap img {
+  -webkit-transition: 0.3s all ease-in-out;
+  -o-transition: 0.3s all ease-in-out;
+  transition: 0.3s all ease-in-out;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  margin-bottom: 0 !important;
+}
+.room:hover .img-wrap img,
+.room:focus .img-wrap img {
+  -webkit-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  transform: scale(1.05);
+}
