@@ -1,15 +1,18 @@
 import React, { Component } from "react";
-
+import { addToCart } from "../../redux/Actions/addfav";
 import { connect } from "react-redux";
 
 import AnnonceInfo from "./AnnonceInfo";
 import image1 from "../../images/img1.jpg";
 
-
 class AnnoncesList extends Component {
   constructor(props) {
     super(props);
   }
+
+  handleClick = id => {
+    this.props.addToCart(id);
+  };
 
   render() {
     const { annonces, ville, gouvernerat, type, typebien } = this.props;
@@ -41,6 +44,18 @@ class AnnoncesList extends Component {
                 </p>
                 <p class="card-text">{e.typebien}</p>
                 <p class="card-text">{e.type}</p>
+                <p>
+                  {" "}
+                  <span
+                    to="/"
+                    className="btn-floating halfway-fab waves-effect waves-light red"
+                    onClick={() => {
+                      this.handleClick();
+                    }}
+                  >
+                    <i className="material-icons">add</i>
+                  </span>{" "}
+                </p>
               </div>
             </div>
           ))}
@@ -62,4 +77,15 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps)(AnnoncesList);
+const mapDispatchToProps = dispatch => {
+  return {
+    addToCart: id => {
+      dispatch(addToCart(id));
+    }
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(AnnoncesList);
