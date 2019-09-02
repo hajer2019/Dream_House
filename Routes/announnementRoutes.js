@@ -7,38 +7,6 @@ const router = express.Router();
 // Ajouter une annoce
 // Post request /api/annonce/ajouter
 
-{
-  /*router.post(
-  "/annonce/ajouter", (req, res) => {
-    const {
-      ville,
-      prix,
-      categorie,
-      chambre,
-      lit,
-      adresse,
-      description,
-      typebien
-    } = req.body;
-    const newAnnounc = new Announc({
-      ville,
-      prix,
-      categorie,
-      chambre,
-      lit,
-      adresse,
-      description,
-      typebien
-    });
-
-    newAnnounc
-      .save()
-      .then(saved => res.json({ new: newAnnounc }))
-      .catch(err => console.log(err));
-  }
-);*/
-}
-
 router.post("/annonce/ajouter", (req, res) => {
   const storage = multer.diskStorage({
     destination: function(req, file, cb) {
@@ -82,9 +50,9 @@ router.get("/annonce", (req, res) => {
 
 // Trouver une annonce par id
 // Get request /api/annonce/id
-router.get("/api/annonce/:id", (req, res) => {
+router.get("/annonce/:id", (req, res) => {
   Announc.findById(req.params.id)
-    .then(contacts => res.json(contacts))
+    .then(annonce => res.json(annonce))
     .catch(err => res.send("cannot get"));
 });
 

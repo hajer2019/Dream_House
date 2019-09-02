@@ -7,12 +7,13 @@ const passport = require("passport");
 const cors = require("cors");
 
 const app = express();
-app.use(cors());
+
 // BodyParser middleware
 //app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.json());
 
 app.use("/uploads", express.static("uploads"));
+app.use(cors());
 
 // Users route middleware
 app.use("/api", userRoute);
