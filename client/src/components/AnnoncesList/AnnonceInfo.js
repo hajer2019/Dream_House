@@ -10,8 +10,8 @@ class AnnonceInfo extends Component {
 
   componentDidMount() {
     let id = this.props.match.params.annonce_id;
-    //console.log(id);
-    //this.props.getPost(id);
+    console.log(id);
+    this.props.getPost(id);
   }
   render() {
     return (
@@ -23,7 +23,7 @@ class AnnonceInfo extends Component {
                 <div class="slide-one-item home-slider owl-carousel">
                   <div>
                     <img
-                      src="https://img.lemde.fr/2019/04/22/0/191/1619/1079/688/0/60/0/e39da8d_2FIads9h8wB-0SwSgxVaVWsp.jpg"
+                      src={this.props.annonce.image}
                       alt="Image"
                       class="annonce-info-img img-fluid"
                     />
@@ -96,7 +96,12 @@ class AnnonceInfo extends Component {
   }
 }
 
+const mapStateToProps = state => {
+  return {
+    annonce: state.postReducer.annonce
+  };
+};
 export default connect(
-  null,
+  mapStateToProps,
   { getPost }
 )(AnnonceInfo);

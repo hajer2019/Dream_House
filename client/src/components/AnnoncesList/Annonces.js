@@ -1,12 +1,8 @@
 import React, { Component } from "react";
 import { addToCart } from "../../redux/Actions/addfav";
+import { getPosts } from "../../redux/Actions/postActions";
 import { connect } from "react-redux";
-
-import AnnonceInfo from "./AnnonceInfo";
-import image1 from "../../images/img1.jpg";
-
 import { Link } from "react-router-dom";
-import { connect } from "react-redux";
 
 class AnnoncesList extends Component {
   constructor(props) {
@@ -16,10 +12,14 @@ class AnnoncesList extends Component {
   handleClick = id => {
     this.props.addToCart(id);
   };
+  componentWillMount() {
+    this.props.getPosts();
+  }
 
   render() {
     const { annonces, ville, gouvernerat, type, typebien } = this.props;
-    const filteredAd = annonces
+
+    /*const filteredAd = annonces
       .filter(el => el.ville.toLowerCase().includes(ville.toLowerCase().trim()))
       .filter(el =>
         el.gouvernerat.toLowerCase().includes(gouvernerat.toLowerCase().trim())
@@ -27,44 +27,16 @@ class AnnoncesList extends Component {
       .filter(el => el.type.toLowerCase().includes(type.toLowerCase().trim()))
       .filter(el =>
         el.typebien.toLowerCase().includes(typebien.toLowerCase().trim())
-      );
+      );*/
+
     return (
       <div>
         <div className="w-75 mt-4 container cards-container">
-          {filteredAd.map(e => (
-
-            <div class="card annonce-card ">
-              <img
-                src={e.image}
-                class="card-img-top annonce-list-img"
-                alt="..."
-              />
-              <div class="card-body">
-                <h5 class="card-title card-title-annonce">
-                  Family Home for sale
-                </h5>
-                <p class="card-text">
-                  <i class="fas fa-map-marker-alt"></i> {e.ville}
-                </p>
-                <p class="card-text">{e.typebien}</p>
-                <p class="card-text">{e.type}</p>
-                <p>
-                  {" "}
-                  <span
-                    to="/"
-                    className="btn-floating halfway-fab waves-effect waves-light red"
-                    onClick={() => {
-                      this.handleClick();
-                    }}
-                  >
-                    <i className="material-icons">add</i>
-                  </span>{" "}
-                </p>
-
-            <Link to={"/" + e._id}>
-              <div class="card annonce-card ">
+          {annonces.map(el => (
+            <Link to={"/" + el._id}>
+              <div key={el._id} class="card annonce-card ">
                 <img
-                  src={e.image}
+                  src={el.image}
                   class="card-img-top annonce-list-img"
                   alt="..."
                 />
@@ -73,12 +45,11 @@ class AnnoncesList extends Component {
                     Family Home for sale
                   </h5>
                   <p class="card-text">
-                    <i class="fas fa-map-marker-alt"></i> {e.ville}
+                    <i class="fas fa-map-marker-alt"></i> {el.ville}
                   </p>
-                  <p class="card-text">{e.typebien}</p>
-                  <p class="card-text">{e.type}</p>
+                  <p class="card-text">{el.typebien}</p>
+                  <p class="card-text">{el.type}</p>
                 </div>
-
               </div>
             </Link>
           ))}
@@ -90,7 +61,7 @@ class AnnoncesList extends Component {
     );
   }
 }
-function mapStateToProps(state) {
+const mapStateToProps = state => {
   return {
     annonces: state.postReducer.annonces,
     gouvernerat: state.reducerSearch.gouvernerat,
@@ -98,17 +69,17 @@ function mapStateToProps(state) {
     type: state.reducerSearch.type,
     typebien: state.reducerSearch.typebien
   };
-}
-
-const mapDispatchToProps = dispatch => {
-  return {
-    addToCart: id => {
-      dispatch(addToCart(id));
-    }
-  };
 };
+
+//const mapDispatchToProps = dispatch => {
+// return {
+// addToCart: id => {
+// dispatch(addToCart(id));
+//}
+//};
+//};
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  { getPosts }
 )(AnnoncesList);

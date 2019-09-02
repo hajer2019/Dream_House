@@ -31,7 +31,6 @@ class Add extends React.Component {
     this.setState({
       image: e.target.files[0]
     });
-    console.log(this.state.image);
   };
   onChange = e => {
     this.setState({ [e.target.name]: e.target.value });

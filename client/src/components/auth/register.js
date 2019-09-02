@@ -22,6 +22,7 @@ class Loginn extends Component {
       password: this.state.password
     };
     this.props.userSignup(newUser);
+    this.props.history.push("/login");
   };
 
   render() {

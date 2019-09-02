@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { userSignin } from "../../redux/Actions/userActions";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 
 class Login extends Component {
   constructor() {
@@ -66,9 +67,9 @@ class Login extends Component {
                       Se connecter
                     </button>
 
-                    <a href="#" className="text-info">
+                    <Link to="/register" className="text-info">
                       S'enregistrer ici
-                    </a>
+                    </Link>
                   </div>
                 </form>
               </div>

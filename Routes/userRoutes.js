@@ -74,6 +74,11 @@ router.delete("/user/:id", (req, res) => {
     .then(data => res.send({ success: true }))
     .catch(err => res.send({ success: false }));
 });
+router.get("/users", (req, res) => {
+  User.find()
+    .then(annonces => res.json(annonces))
+    .catch(err => res.send("cannot get"));
+});
 
 router.get(
   "/current",
