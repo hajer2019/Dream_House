@@ -7,29 +7,29 @@ function DashboardMenu() {
       <ul className="dashboard-menu">
         <li className="dashboard-menu-link">
           <Link to="/">
-            <i class="fas fa-home"></i> Accueil
+            <i className="fas fa-home"></i> Accueil
           </Link>
         </li>
         <li className="dashboard-menu-link">
           <a href="#profile">
-            <i class="far fa-user"></i>
+            <i className="far fa-user"></i>
             <span> Profile</span>
           </a>
         </li>
         <li className="dashboard-menu-link">
           <a href="#collection">
-            <i class="far fa-heart"></i> Collection
+            <i className="far fa-heart"></i> Collection
           </a>
         </li>
         <li className="dashboard-menu-link">
           <Link to="/add">
-            <i class="far fa-plus-square"></i> Ajouter une annonce
+            <i className="far fa-plus-square"></i> Ajouter une annonce
           </Link>
         </li>
 
         <li className="dashboard-menu-link">
           <a href="#">
-            <i class="fas fa-sign-out-alt"></i> Se deconnecter
+            <i className="fas fa-sign-out-alt"></i> Se deconnecter
           </a>
         </li>
       </ul>

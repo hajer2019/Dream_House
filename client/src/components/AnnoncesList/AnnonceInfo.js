@@ -15,62 +15,57 @@ class AnnonceInfo extends Component {
   }
   render() {
     return (
-      <div class="site-section site-section-sm">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-8 mx-auto">
+      <div className="site-section site-section-sm">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-8 mx-auto">
               <div>
-                <div class="slide-one-item home-slider owl-carousel">
+                <div className="slide-one-item home-slider owl-carousel">
                   <div>
                     <img
                       src={this.props.annonce.image}
                       alt="Image"
-                      class="annonce-info-img img-fluid"
+                      className="annonce-info-img img-fluid"
                     />
                   </div>
                 </div>
               </div>
-              <div class="bg-white property-body border-bottom border-left border-right">
-                <div class="row mb-5">
-                  <div class="col-md-6">
-                    <strong class="text-success h1 mb-3">
+              <div className="bg-white property-body border-bottom border-left border-right">
+                <div className="row mb-5">
+                  <div className="col-md-6">
+                    <strong className="text-success h1 mb-3">
                       {this.props.annonce.ville}
                     </strong>
                   </div>
-                  <div class="col-md-6">
-                    <ul class="property-specs-wrap mb-3 mb-lg-0  float-lg-right">
+                  <div className="col-md-6">
+                    <ul className="property-specs-wrap mb-3 mb-lg-0  float-lg-right">
                       <li>
-                        <span class="property-specs">Chambres</span>
-                        <span class="property-specs-number">
-                          {this.props.annonce.chambre}
-                        </span>
-                      </li>
-                      <li>
-                        <span class="property-specs">Lit</span>
-                        <span class="property-specs-number">
-                          {this.props.annonce.lit}
+                        <span className="property-specs">
+                          Chambres : {this.props.annonce.chambre}
                         </span>
                       </li>
                     </ul>
                   </div>
                 </div>
-                <div class="row mb-5">
-                  <div class="col-md-6 col-lg-4 text-center border-bottom border-top py-3">
-                    <span class="d-inline-block text-black mb-0 caption-text">
+                <div className="row mb-5">
+                  <div className="col-md-6 col-lg-4 text-center border-bottom border-top py-3">
+                    <span className="d-inline-block text-black mb-0 caption-text">
                       {this.props.annonce.typebien}
                     </span>
                   </div>
-                  <div class="col-md-6 col-lg-4 text-center border-bottom border-top py-3">
-                    <span class="d-inline-block text-black mb-0 caption-text">
+                  <div className="col-md-6 col-lg-4 text-center border-bottom border-top py-3">
+                    <span className="d-inline-block text-black mb-0 caption-text">
                       Ville
                     </span>
-                    <strong class="d-block">{this.props.annonce.ville}</strong>
+                    <strong className="d-block">
+                      {this.props.annonce.ville}
+                    </strong>
                   </div>
-                  <div class="col-md-6 col-lg-4 text-center border-bottom border-top py-3">
+                  <div className="col-md-6 col-lg-4 text-center border-bottom border-top py-3">
                     <Contactuser />
                   </div>
                 </div>
-                <h2 class="h4 text-black">Description</h2>
+                <h2 className="h4 text-black">Description</h2>
                 <p>{this.props.annonce.description}</p>
               </div>
             </div>

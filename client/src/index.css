@@ -323,7 +323,8 @@ h4 {
 }
 
 .annonce-info-img {
-  min-width: 729px;
+  width: 730px !important;
+  height: 547px !important;
 }
 .property-body {
   padding: 40px;
@@ -392,4 +393,11 @@ h4 {
 .dashboard-card {
   max-width: 258px;
   margin-top: 15px;
+}
+.annonce-list-img {
+  width: 278px !important;
+  height: 208px !important;
+}
+.cards-container link {
+  text-decoration: none;
 }
