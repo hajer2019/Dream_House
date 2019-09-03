@@ -9,38 +9,62 @@ class AnnoncesList extends Component {
     super(props);
 
     this.state = {
-      visible: 2
+      visible: 3
     };
   }
 
   handleClick = id => {
     this.props.addToCart(id);
   };
-  componentWillMount() {
+
+  UNSAFE_componentWillMount() {
     this.props.getPosts();
   }
+  // componentWillMount(){
+  //   this.props.getPosts();
+  // }
+
   loadMore = () => {
     this.setState(prev => {
       return { visible: prev.visible + 4 };
     });
   };
   render() {
-    const { annonces, ville, gouvernerat, type, typebien } = this.props;
+    const { annonces, ville, gouvernerat, categorie, typebien } = this.props;
+    console.log(annonces);
+    const x = annonces.filter(e => {
+      return (
+        e.ville.toLowerCase().includes(ville.toLowerCase().trim()) &&
+        e.gouvernerat
+          .toLowerCase()
+          .includes(gouvernerat.toLowerCase().trim()) &&
+        e.categorie.toLowerCase().includes(categorie.toLowerCase().trim()) &&
+        e.typebien.toLowerCase().includes(typebien.toLowerCase().trim())
+      );
+    });
+    // .filter(a => {
+    //   a.gouvernerat.toLowerCase().includes(gouvernerat.toLowerCase().trim());
+    // });
+    // console.log(x);
+    // const filteredAd = annonces
+    //   .filter(el => {
+    //     el.ville.toLowerCase().includes(ville.toLowerCase().trim());
+    //   })
+    //   .filter(el => {
+    //     el.gouvernerat.toLowerCase().includes(gouvernerat.toLowerCase().trim());
+    //   })
 
-    /*const filteredAd = annonces
-      .filter(el => el.ville.toLowerCase().includes(ville.toLowerCase().trim()))
-      .filter(el =>
-        el.gouvernerat.toLowerCase().includes(gouvernerat.toLowerCase().trim())
-      )
-      .filter(el => el.type.toLowerCase().includes(type.toLowerCase().trim()))
-      .filter(el =>
-        el.typebien.toLowerCase().includes(typebien.toLowerCase().trim())
-      );*/
+    //   .filter(el => {
+    //     el.categorie.toLowerCase().includes(categorie.toLowerCase().trim());
+    //   })
+    //   .filter(el => {
+    //     el.typebien.toLowerCase().includes(typebien.toLowerCase().trim());
+    //   });
 
     return (
       <div>
         <div className="w-75 mt-4 container cards-container">
-          {annonces.slice(0, this.state.visible).map(el => (
+          {x.slice(0, this.state.visible).map(el => (
             <Link to={"/" + el._id}>
               <div key={el._id} class="card annonce-card ">
                 <img
@@ -56,7 +80,7 @@ class AnnoncesList extends Component {
                     <i class="fas fa-map-marker-alt"></i> {el.ville}
                   </p>
                   <p class="card-text">{el.typebien}</p>
-                  <p class="card-text">{el.type}</p>
+                  <p class="card-text">{el.categorie}</p>
                 </div>
               </div>
             </Link>
@@ -76,7 +100,7 @@ const mapStateToProps = state => {
     annonces: state.postReducer.annonces,
     gouvernerat: state.reducerSearch.gouvernerat,
     ville: state.reducerSearch.ville,
-    type: state.reducerSearch.type,
+    categorie: state.reducerSearch.categorie,
     typebien: state.reducerSearch.typebien
   };
 };
