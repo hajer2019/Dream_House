@@ -132,10 +132,8 @@ class Add extends React.Component {
               <Input
                 onChange={this.onChange}
                 placeholder="Nombre de lit"
-                min={0}
-                max={100}
-                type="number"
-                step="1"
+                name="lit"
+                type="text"
               />
             </Col>
             <Label for="exampleSelect" sm={3}>
@@ -145,11 +143,8 @@ class Add extends React.Component {
               <Input
                 onChange={this.onChange}
                 placeholder="Nombre de chambre"
-                name="nbrChambre"
-                min={0}
-                max={100}
-                type="number"
-                step="1"
+                name="chambre"
+                type="text"
               />
             </Col>
           </FormGroup>

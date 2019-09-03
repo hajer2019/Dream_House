@@ -21,21 +21,21 @@ function Footer() {
                 href="https://www.facebook.com"
                 id="fs-fb"
               >
-                <i class="fab fa-facebook-square"></i>
+                <i className="fab fa-facebook-square"></i>
               </a>
               <a
                 data-elementtrackid="link-twitter"
                 href="https://twitter.com"
                 id="fs-tw"
               >
-                <i class="fab fa-twitter-square"></i>
+                <i className="fab fa-twitter-square"></i>
               </a>
               <a
                 data-elementtrackid="link-linkedIn"
                 href="https://www.linkedin.com"
                 id="fs-ln"
               >
-                <i class="fab fa-linkedin"></i>
+                <i className="fab fa-linkedin"></i>
               </a>
             </div>
           </div>
