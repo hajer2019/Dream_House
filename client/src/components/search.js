@@ -37,7 +37,7 @@ class Search extends React.Component {
                 style={{ width: "200px" }}
                 name="gouvernerat"
                 id="gouvernerat"
-                class="grid-80"
+                className="grid-80"
                 onChange={this.handleChange}
               >
                 <option value={this.state.gouvernorat} selected>
@@ -58,17 +58,28 @@ class Search extends React.Component {
                 value={this.state.ville}
                 onChange={this.handleChange}
                 id="ville"
+
                 class="grid-80"
                 placeholder="Saisir votre ville"
+
+                className="grid-80"
+                placeholder="saisir votre ville"
+
               />
             </div>
 
             <div className="inp-wrap cat-wrap">
               <select
                 style={{ width: "200px" }}
+
                 name="categorie"
                 id="categorie"
                 class="grid-80"
+
+                name="type"
+                id="type"
+                className="grid-80"
+
                 onChange={this.handleChange}
               >
                 <option value={this.state.categorie} selected>
@@ -85,7 +96,7 @@ class Search extends React.Component {
                 onChange={this.handleChange}
                 name="typebien"
                 id="typebien"
-                class="grid-80"
+                className="grid-80"
                 style={{ width: "200px" }}
               >
                 <option value="Appartement"> Type de bien </option>
@@ -105,7 +116,7 @@ class Search extends React.Component {
                   this.onSubmit(e);
                 }}
                 value={value}
-                class="grid-100 btn"
+                className="grid-100 btn"
                 style={{
                   marginTop: "-8px",
                   backgroundColor: "#fff",

@@ -9,7 +9,8 @@ class AnnoncesList extends Component {
     super(props);
 
     this.state = {
-      visible: 3
+      visible: 6
+
     };
   }
 
@@ -26,7 +27,7 @@ class AnnoncesList extends Component {
 
   loadMore = () => {
     this.setState(prev => {
-      return { visible: prev.visible + 4 };
+      return { visible: prev.visible + 3 };
     });
   };
   render() {
@@ -66,29 +67,35 @@ class AnnoncesList extends Component {
         <div className="w-75 mt-4 container cards-container">
           {x.slice(0, this.state.visible).map(el => (
             <Link to={"/" + el._id}>
-              <div key={el._id} class="card annonce-card ">
+              <div key={el._id} className="card annonce-card ">
                 <img
                   src={el.image}
-                  class="card-img-top annonce-list-img"
+                  className="card-img-top annonce-list-img"
                   alt="..."
                 />
-                <div class="card-body">
-                  <h5 class="card-title card-title-annonce">
-                    Family Home for sale
+                <div className="card-body">
+                  <h5 className="card-title card-title-annonce">
+                    {el.prix} TND
                   </h5>
-                  <p class="card-text">
-                    <i class="fas fa-map-marker-alt"></i> {el.ville}
+                  <p className="card-text">
+                    <i className="fas fa-map-marker-alt"></i> {el.ville}
                   </p>
+
                   <p class="card-text">{el.typebien}</p>
                   <p class="card-text">{el.categorie}</p>
+                  <p className="card-text">{el.categorie}</p>
+                  <p className="card-text">{el.type}</p>
                 </div>
               </div>
             </Link>
           ))}
         </div>
         <div className="mt-3 mx-auto" style={{ width: "10%" }}>
-          <button onClick={this.loadMore} className=" load-more-button mx-auto">
-            Load more
+          <button
+            onClick={this.loadMore}
+            className=" btn btn-primary load-more-button mx-auto"
+          >
+            Plus d'annonces
           </button>
         </div>
       </div>
