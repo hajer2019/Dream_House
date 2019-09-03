@@ -8,7 +8,7 @@ class Search extends React.Component {
     this.state = {
       ville: "",
       gouvernerat: "",
-      type: "",
+      categorie: "",
       typebien: ""
     };
   }
@@ -40,8 +40,8 @@ class Search extends React.Component {
                 className="grid-80"
                 onChange={this.handleChange}
               >
-                <option value={this.state.gouvernerat} selected>
-                  Choisir un gouvernerat
+                <option value={this.state.gouvernorat} selected>
+                  Choisir un gouvernorat
                 </option>
                 <option value="Ben Arous"> Tunis </option>
                 <option value="Ben Arous"> Ben Arous </option>
@@ -58,21 +58,32 @@ class Search extends React.Component {
                 value={this.state.ville}
                 onChange={this.handleChange}
                 id="ville"
+
+                class="grid-80"
+                placeholder="Saisir votre ville"
+
                 className="grid-80"
                 placeholder="saisir votre ville"
+
               />
             </div>
 
             <div className="inp-wrap cat-wrap">
               <select
                 style={{ width: "200px" }}
+
+                name="categorie"
+                id="categorie"
+                class="grid-80"
+
                 name="type"
                 id="type"
                 className="grid-80"
+
                 onChange={this.handleChange}
               >
-                <option value="type" selected>
-                  Type
+                <option value={this.state.categorie} selected>
+                  Categorie
                 </option>
                 <option value="Louer"> Louer </option>
                 <option value="Vendre"> Vendre </option>
@@ -107,7 +118,7 @@ class Search extends React.Component {
                 value={value}
                 className="grid-100 btn"
                 style={{
-                  marginTop: "0px",
+                  marginTop: "-8px",
                   backgroundColor: "#fff",
                   color: "#000000",
                   marginRight: "0",
