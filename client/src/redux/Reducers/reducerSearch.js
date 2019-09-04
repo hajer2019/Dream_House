@@ -1,4 +1,3 @@
-import { house } from "../../data";
 
 const initialState = {
   ville: "",
