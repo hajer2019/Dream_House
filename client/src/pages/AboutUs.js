@@ -1,4 +1,9 @@
 import React from "react";
+import img1 from "../layouts/image1.jpg";
+import img2 from "../layouts/image2.jpg";
+import img3 from "../layouts/image3.jpg";
+import img4 from "../layouts/image4.jpg";
+
 import { Link } from "react-router-dom";
 
 function AboutUs() {
@@ -11,11 +16,7 @@ function AboutUs() {
               className="col-md-12 col-lg-7 ml-auto order-lg-2 position-relative mb-5"
               data-aos="fade-up"
             >
-              <img
-                src="http://www.minalesliewujastyk.com/wp-content/uploads/2016/09/image7.jpg"
-                alt="Image"
-                className="img-fluid rounded"
-              />
+              <img src={img1} alt="Image" className="img-fluid rounded" />
             </div>
             <div className="col-md-12 col-lg-4 order-lg-1" data-aos="fade-up">
               <h2 className="heading mb-4">Présentation</h2>
@@ -51,9 +52,9 @@ function AboutUs() {
               <Link to="/" className="room">
                 <figure className="img-wrap">
                   <img
-                    src="http://www.minalesliewujastyk.com/wp-content/uploads/2016/09/image7.jpg"
+                    src={img2}
                     alt="Free website template"
-                    className="img-fluid mb-3"
+                    className="aboutus-img img-fluid mb-3"
                   />
                 </figure>
                 <div className="p-3 text-center room-info">
@@ -66,9 +67,9 @@ function AboutUs() {
               <Link to="/" className="room">
                 <figure className="img-wrap">
                   <img
-                    src="http://www.minalesliewujastyk.com/wp-content/uploads/2016/09/image7.jpg"
+                    src={img3}
                     alt="Free website template"
-                    className="img-fluid mb-3"
+                    className=" aboutus-img img-fluid mb-3"
                   />
                 </figure>
                 <div className="p-3 text-center room-info">
@@ -81,9 +82,9 @@ function AboutUs() {
               <Link to="/" className="room">
                 <figure className="img-wrap">
                   <img
-                    src="images/img_3.jpg"
+                    src={img4}
                     alt="Free website template"
-                    className="img-fluid mb-3"
+                    className="aboutus-img img-fluid mb-3"
                   />
                 </figure>
                 <div className="p-3 text-center room-info">

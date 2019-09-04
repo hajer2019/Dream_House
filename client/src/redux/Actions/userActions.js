@@ -1,5 +1,5 @@
 import axios from "axios";
-
+import jwt from "jwt-decode";
 export const userSignup = user => dispatch => {
   const config = {
     headers: {
@@ -24,10 +24,11 @@ export const userSignin = data => dispatch => {
 
   axios.post("/api/user/login", data, config).then(res => {
     const token = res.data.token;
-
-    localStorage.setItem("jwtToken", token);
-
-    dispatch(setUser(token));
+    if (token) {
+      localStorage.setItem("jwtToken", token);
+      dispatch(setUser(token));
+      console.log(jwt(token));
+    }
   });
 };
 
@@ -38,7 +39,10 @@ export const setUser = token => dispatch => {
   });
 };
 
-export const logOut = () => dispatch => {
-  setUser({});
+export const logOut = payload => dispatch => {
   localStorage.removeItem("jwtToken");
+  return dispatch({
+    type: "LOG_OUT",
+    payload
+  });
 };

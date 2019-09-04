@@ -1,6 +1,11 @@
 import { house } from "../../data";
 
-const initialState = { ville: "", gouvernerat: "", type: "", typebien: "" };
+const initialState = {
+  ville: "",
+  gouvernerat: "",
+  categorie: "",
+  typebien: ""
+};
 
 export default function reducer(state = initialState, action) {
   switch (action.type) {
@@ -9,7 +14,7 @@ export default function reducer(state = initialState, action) {
         ...state,
         ville: action.payload.ville,
         gouvernerat: action.payload.gouvernerat,
-        type: action.payload.type,
+        categorie: action.payload.categorie,
         typebien: action.payload.typebien
       };
     default:

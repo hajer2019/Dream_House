@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { addToCart } from "../../redux/Actions/addfav";
 import { getPosts } from "../../redux/Actions/postActions";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
@@ -16,7 +15,7 @@ class AnnoncesList extends Component {
   handleClick = id => {
     this.props.addToCart(id);
   };
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     this.props.getPosts();
   }
   loadMore = () => {
@@ -25,22 +24,23 @@ class AnnoncesList extends Component {
     });
   };
   render() {
-    const { annonces, ville, gouvernerat, type, typebien } = this.props;
+    const { annonces, ville, gouvernerat, categorie, typebien } = this.props;
 
-    /*const filteredAd = annonces
-      .filter(el => el.ville.toLowerCase().includes(ville.toLowerCase().trim()))
-      .filter(el =>
-        el.gouvernerat.toLowerCase().includes(gouvernerat.toLowerCase().trim())
-      )
-      .filter(el => el.type.toLowerCase().includes(type.toLowerCase().trim()))
-      .filter(el =>
-        el.typebien.toLowerCase().includes(typebien.toLowerCase().trim())
-      );*/
+    const x = annonces.filter(e => {
+      return (
+        e.ville.toLowerCase().includes(ville.toLowerCase().trim()) &&
+        e.gouvernerat
+          .toLowerCase()
+          .includes(gouvernerat.toLowerCase().trim()) &&
+        e.categorie.toLowerCase().includes(categorie.toLowerCase().trim()) &&
+        e.typebien.toLowerCase().includes(typebien.toLowerCase().trim())
+      );
+    });
 
     return (
       <div>
         <div className="w-75 mt-4 container cards-container">
-          {annonces.slice(0, this.state.visible).map(el => (
+          {x.slice(0, this.state.visible).map(el => (
             <Link to={"/" + el._id}>
               <div key={el._id} className="card annonce-card ">
                 <img
@@ -79,18 +79,10 @@ const mapStateToProps = state => {
     annonces: state.postReducer.annonces,
     gouvernerat: state.reducerSearch.gouvernerat,
     ville: state.reducerSearch.ville,
-    type: state.reducerSearch.type,
+    categorie: state.reducerSearch.categorie,
     typebien: state.reducerSearch.typebien
   };
 };
-
-//const mapDispatchToProps = dispatch => {
-// return {
-// addToCart: id => {
-// dispatch(addToCart(id));
-//}
-//};
-//};
 
 export default connect(
   mapStateToProps,

@@ -8,7 +8,7 @@ class Search extends React.Component {
     this.state = {
       ville: "",
       gouvernerat: "",
-      type: "",
+      categorie: "",
       typebien: ""
     };
   }
@@ -66,17 +66,16 @@ class Search extends React.Component {
             <div className="inp-wrap cat-wrap">
               <select
                 style={{ width: "200px" }}
-                name="type"
-                id="type"
+                name="categorie"
+                id="categorie"
                 className="grid-80"
                 onChange={this.handleChange}
               >
-                <option value="type" selected>
+                <option value="categorie" selected>
                   Type
                 </option>
                 <option value="Louer"> Louer </option>
                 <option value="Vendre"> Vendre </option>
-                <option value="Acheter"> Acheter </option>
               </select>
             </div>
 
