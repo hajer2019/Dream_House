@@ -1,5 +1,5 @@
 import axios from "axios";
-import jwt from "jwt-decode";
+
 export const userSignup = user => dispatch => {
   const config = {
     headers: {
@@ -27,7 +27,7 @@ export const userSignin = data => dispatch => {
     if (token) {
       localStorage.setItem("jwtToken", token);
       dispatch(setUser(token));
-      console.log(jwt(token));
+      //console.log(jwt(token));
     }
   });
 };
