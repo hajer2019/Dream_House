@@ -9,7 +9,6 @@ class AnnoncesList extends Component {
 
     this.state = {
       visible: 6
-
     };
   }
 
@@ -32,7 +31,6 @@ class AnnoncesList extends Component {
   render() {
     const { annonces, ville, gouvernerat, categorie, typebien } = this.props;
 
-
     const x = annonces.filter(e => {
       return (
         e.ville.toLowerCase().includes(ville.toLowerCase().trim()) &&
@@ -43,37 +41,6 @@ class AnnoncesList extends Component {
         e.typebien.toLowerCase().includes(typebien.toLowerCase().trim())
       );
     });
-
-    console.log(annonces);
-    const x = annonces.filter(e => {
-      return (
-        e.ville.toLowerCase().includes(ville.toLowerCase().trim()) &&
-        e.gouvernerat
-          .toLowerCase()
-          .includes(gouvernerat.toLowerCase().trim()) &&
-        e.categorie.toLowerCase().includes(categorie.toLowerCase().trim()) &&
-        e.typebien.toLowerCase().includes(typebien.toLowerCase().trim())
-      );
-    });
-    // .filter(a => {
-    //   a.gouvernerat.toLowerCase().includes(gouvernerat.toLowerCase().trim());
-    // });
-    // console.log(x);
-    // const filteredAd = annonces
-    //   .filter(el => {
-    //     el.ville.toLowerCase().includes(ville.toLowerCase().trim());
-    //   })
-    //   .filter(el => {
-    //     el.gouvernerat.toLowerCase().includes(gouvernerat.toLowerCase().trim());
-    //   })
-
-    //   .filter(el => {
-    //     el.categorie.toLowerCase().includes(categorie.toLowerCase().trim());
-    //   })
-    //   .filter(el => {
-    //     el.typebien.toLowerCase().includes(typebien.toLowerCase().trim());
-    //   });
-
 
     return (
       <div>
@@ -93,11 +60,7 @@ class AnnoncesList extends Component {
                   <p className="card-text">
                     <i className="fas fa-map-marker-alt"></i> {el.ville}
                   </p>
-
-                  <p class="card-text">{el.typebien}</p>
                   <p class="card-text">{el.categorie}</p>
-                  <p className="card-text">{el.categorie}</p>
-                  <p className="card-text">{el.type}</p>
                 </div>
               </div>
             </Link>
