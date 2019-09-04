@@ -1,6 +1,7 @@
 import React from "react";
 import { addPost } from "../redux/Actions/postActions";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 import {
   Col,
   Button,
@@ -107,6 +108,7 @@ class Add extends React.Component {
           </FormGroup>
           <FormGroup className="formfield" row>
             <Label for="exampleSelect" sm={2}>
+              {" "}
               Type de bien
             </Label>
             <Col sm={4}>
@@ -211,12 +213,15 @@ class Add extends React.Component {
           </FormGroup>
           <FormGroup className="formfield" check row>
             <Col sm={{ size: 10, offset: 2 }}>
-              <Button
-                onClick={this.onSubmit}
-                style={{ backgroundColor: "#2f92f3 !important" }}
-              >
-                Submit
-              </Button>
+              <Link to="/">
+                {" "}
+                <Button
+                  onClick={this.onSubmit}
+                  style={{ backgroundColor: "#2f92f3 !important" }}
+                >
+                  Submit
+                </Button>
+              </Link>
             </Col>
           </FormGroup>
         </Form>
