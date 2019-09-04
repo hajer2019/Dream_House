@@ -25,6 +25,7 @@ class Add extends React.Component {
       chambre: "",
       prix: "",
       description: "",
+      contact: 0,
       image: null
     };
   }
@@ -47,10 +48,10 @@ class Add extends React.Component {
     newdata.append("chambre", this.state.chambre);
     newdata.append("prix", this.state.prix);
     newdata.append("description", this.state.description);
+    newdata.append("contact", this.state.contact);
     newdata.append("image", this.state.image);
 
     this.props.addPost(newdata);
-    console.log(newdata);
   };
   render() {
     return (
@@ -196,6 +197,20 @@ class Add extends React.Component {
             </Col>
           </FormGroup>
 
+          <FormGroup className="formfield" row>
+            <Label for="exampleSelect" name="nbrLit" sm={2}>
+              Contact
+            </Label>
+            <Col sm={3}>
+              <Input
+                value={this.state.value}
+                onChange={this.onChange}
+                placeholder="contact"
+                name="contact"
+                type="text"
+              />
+            </Col>
+          </FormGroup>
           <FormGroup className="formfield" check row>
             <Col sm={{ size: 10, offset: 2 }}>
               <Link to="/">

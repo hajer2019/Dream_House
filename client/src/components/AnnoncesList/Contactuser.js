@@ -1,6 +1,7 @@
 import React from "react";
+import { connect } from "react-redux";
 
-function Contactuser() {
+function Contactuser(props) {
   return (
     <div>
       <button
@@ -35,7 +36,7 @@ function Contactuser() {
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
-            <div className="modal-body">86975412</div>
+            <div className="modal-body">{props.annonce.contact}</div>
             <div className="modal-footer">
               <button
                 type="button"
@@ -52,4 +53,10 @@ function Contactuser() {
   );
 }
 
-export default Contactuser;
+const MSTP = state => {
+  return {
+    annonce: state.postReducer.annonce
+  };
+};
+
+export default connect(MSTP)(Contactuser);

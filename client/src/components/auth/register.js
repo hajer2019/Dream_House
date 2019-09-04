@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 import { userSignup } from "../../redux/Actions/userActions";
 class Loginn extends Component {
   constructor(props) {
@@ -78,9 +79,9 @@ class Loginn extends Component {
                 </div>
 
                 <div className="form-group-auth">
-                  <a className="btn btn-block g-button" href="#">
+                  <Link to="/login" className="btn btn-block g-button">
                     Se connecter
-                  </a>
+                  </Link>
                 </div>
               </form>
             </div>

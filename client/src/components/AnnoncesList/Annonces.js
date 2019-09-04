@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { addToCart } from "../../redux/Actions/addfav";
 import { getPosts } from "../../redux/Actions/postActions";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
@@ -32,6 +31,19 @@ class AnnoncesList extends Component {
   };
   render() {
     const { annonces, ville, gouvernerat, categorie, typebien } = this.props;
+
+
+    const x = annonces.filter(e => {
+      return (
+        e.ville.toLowerCase().includes(ville.toLowerCase().trim()) &&
+        e.gouvernerat
+          .toLowerCase()
+          .includes(gouvernerat.toLowerCase().trim()) &&
+        e.categorie.toLowerCase().includes(categorie.toLowerCase().trim()) &&
+        e.typebien.toLowerCase().includes(typebien.toLowerCase().trim())
+      );
+    });
+
     console.log(annonces);
     const x = annonces.filter(e => {
       return (
@@ -61,6 +73,7 @@ class AnnoncesList extends Component {
     //   .filter(el => {
     //     el.typebien.toLowerCase().includes(typebien.toLowerCase().trim());
     //   });
+
 
     return (
       <div>
@@ -111,14 +124,6 @@ const mapStateToProps = state => {
     typebien: state.reducerSearch.typebien
   };
 };
-
-//const mapDispatchToProps = dispatch => {
-// return {
-// addToCart: id => {
-// dispatch(addToCart(id));
-//}
-//};
-//};
 
 export default connect(
   mapStateToProps,

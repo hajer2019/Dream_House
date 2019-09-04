@@ -21,8 +21,7 @@ router.post("/annonce/ajouter", (req, res) => {
     if (err) {
       console.log(err);
     }
-    //console.log(req.body);
-    //console.log(req.file);
+
     const newAnnounc = new Announc({
       ville: req.body.ville,
       prix: req.body.prix,
@@ -32,9 +31,10 @@ router.post("/annonce/ajouter", (req, res) => {
       gouvernerat: req.body.gouvernerat,
       description: req.body.description,
       typebien: req.body.typebien,
+      contact: req.body.contact,
       image: req.file.path
     });
-    console.log(newAnnounc);
+
     newAnnounc.save();
   });
 });

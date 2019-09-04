@@ -22,6 +22,12 @@ class Login extends Component {
     };
     this.props.userSignin(userInfo);
   };
+  componentDidUpdate() {
+    const token = localStorage.getItem("jwtToken");
+    if (this.props.isAuth) {
+      this.props.history.push("/dashboard");
+    }
+  }
   render() {
     return (
       <div className="container" id="login">

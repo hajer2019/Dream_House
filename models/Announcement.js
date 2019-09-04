@@ -35,9 +35,12 @@ const AnnouncSchema = new Schema({
   image: {
     type: String
   },
+  contact: {
+    type: Number
+  },
   description: {
     type: String
   }
 });
 
-module.exports = Announc = mongoose.model("annonces", AnnouncSchema);
+module.exports = Announc = mongoose.model("annonces2", AnnouncSchema);

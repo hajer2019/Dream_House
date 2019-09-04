@@ -20,6 +20,11 @@ export default function(state = initialState, action) {
           ...state
         };
       }
+    case "LOG_OUT":
+      return {
+        ...state,
+        isAuth: false
+      };
     default:
       return state;
   }

@@ -401,3 +401,10 @@ h4 {
 .cards-container link {
   text-decoration: none;
 }
+.aboutus-img {
+  width: 350px !important;
+  height: 233px !important;
+}
+.load-more-button {
+  width: 200px !important;
+}
