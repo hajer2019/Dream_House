@@ -2,7 +2,7 @@ import React from "react";
 import DashboardMenu from "./DashboardMenu";
 import Profile from "./Profile";
 import Collection from "./Collection";
-import AddPost from "./addPost";
+
 function Dashboard() {
   return (
     <div className="dashboard  row d-flex ">
