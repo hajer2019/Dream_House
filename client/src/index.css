@@ -376,9 +376,7 @@ h4 {
   border-bottom: solid 1px #dddddd;
   font-weight: 600;
 }
-.dashboard-content {
-  background-color: white;
-}
+
 .profile-content {
   margin-top: 20px;
   margin-right: 10px;
@@ -407,4 +405,7 @@ h4 {
 }
 .load-more-button {
   width: 200px !important;
+}
+.profile-img {
+  width: 110px !important;
 }
