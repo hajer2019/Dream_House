@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import user from "../../layouts/user.jpg";
 
 function Profile(props) {
   return (
@@ -7,8 +8,8 @@ function Profile(props) {
       <div className="profile-header">Profile</div>
       <div className=" profile-content row justify-content-around">
         <div className="col-4">
-          <div className=" profile-info card">
-            <i class="fas fa-user-circle"></i>
+          <div className=" text-center profile-info card pt-3 pb-3">
+            <img className="mx-auto profile-img" src={user} alt="user"></img>
             <h5 className="h3 mt-3 ml-3 ">{props.user.name}</h5>
             <h5 className="h3 mt-3 ml-3">{props.user.email}</h5>
           </div>

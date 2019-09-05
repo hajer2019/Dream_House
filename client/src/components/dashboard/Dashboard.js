@@ -9,7 +9,7 @@ function Dashboard() {
       <div className=" menu-container col-2">
         <DashboardMenu />
       </div>
-      <div className="dashboard-content mr-4 col-9">
+      <div className="dashboard-content ml-4 col-9">
         <Profile />
         <Collection />
       </div>

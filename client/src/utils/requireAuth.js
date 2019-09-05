@@ -6,7 +6,7 @@ export default function(ComposedComponent) {
     componentWillMount() {
       const token = localStorage.getItem("jwtToken");
       if (!token) {
-        alert("require auth");
+        alert("Vous devez se connecter d'abord");
         this.props.history.push("/login");
       }
     }
