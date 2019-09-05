@@ -9,21 +9,53 @@ class Loginn extends Component {
     this.state = {
       name: "",
       email: "",
-      password: ""
+      password: "",
+      nameError: "",
+      emailError: "",
+      passwordError: ""
     };
   }
+  validate = () => {
+    let nameError = "";
+    let emailError = "";
+    let passwordError = "";
+
+    if (!this.state.name) {
+      nameError = "Veillez entrer votre nom";
+    }
+
+    if (
+      !this.state.email.match(
+        /[a-z0-9!#$%&'*+\/=?^_{|}~-]+(?:\.[a-z0-9!#$%&'*+\/=?^_{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9][a-z0-9-]*[a-z0-9]/
+      )
+    ) {
+      emailError = "Veuillez entrer une adresse email valide";
+    }
+    if (!this.state.password.match(/[a-zA-Z]{6,}/)) {
+      passwordError = "Le mot de passe doit contenir au moins 6 caractères";
+    }
+    if (emailError || nameError || passwordError) {
+      this.setState({ emailError, nameError, passwordError });
+      return false;
+    } else {
+      return true;
+    }
+  };
   onChange = e => {
     this.setState({ [e.target.id]: e.target.value });
   };
   onSubmit = e => {
     e.preventDefault();
-    const newUser = {
-      name: this.state.name,
-      email: this.state.email,
-      password: this.state.password
-    };
-    this.props.userSignup(newUser);
-    this.props.history.push("/login");
+    const isValid = this.validate();
+    if (isValid) {
+      const newUser = {
+        name: this.state.name,
+        email: this.state.email,
+        password: this.state.password
+      };
+      this.props.userSignup(newUser);
+      this.props.history.push("/login");
+    }
   };
 
   render() {
@@ -47,6 +79,9 @@ class Loginn extends Component {
                     id="name"
                     placeholder="Name"
                   />
+                  <div style={{ fontSize: 12, color: "red" }}>
+                    {this.state.nameError}
+                  </div>
                 </div>
                 <div className="form-group-auth">
                   <input
@@ -57,6 +92,9 @@ class Loginn extends Component {
                     id="email"
                     placeholder="Email"
                   />
+                  <div style={{ fontSize: 12, color: "red" }}>
+                    {this.state.emailError}
+                  </div>
                 </div>
                 <div className="form-group-auth">
                   <input
@@ -67,6 +105,9 @@ class Loginn extends Component {
                     className="form-control my-input"
                     placeholder="Password"
                   />
+                  <div style={{ fontSize: 12, color: "red" }}>
+                    {this.state.passwordError}
+                  </div>
                 </div>
                 <div className="text-center ">
                   <button
