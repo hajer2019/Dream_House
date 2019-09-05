@@ -35,9 +35,9 @@ class DashboardMenu extends Component {
           </li>
 
           <li className="dashboard-menu-link">
-            <a onClick={this.onlogout}>
+            <Link onClick={this.onlogout}>
               <i className="fas fa-sign-out-alt"></i> Se deconnecter
-            </a>
+            </Link>
           </li>
         </ul>
       </div>

@@ -16,7 +16,11 @@ function AboutUs() {
               className="col-md-12 col-lg-7 ml-auto order-lg-2 position-relative mb-5"
               data-aos="fade-up"
             >
-              <img src={img1} alt="Image" className="img-fluid rounded" />
+              <img
+                src={img1}
+                alt="aboutusimage"
+                className="img-fluid rounded"
+              />
             </div>
             <div className="col-md-12 col-lg-4 order-lg-1" data-aos="fade-up">
               <h2 className="heading mb-4">Présentation</h2>

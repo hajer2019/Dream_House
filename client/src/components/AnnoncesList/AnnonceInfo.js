@@ -4,10 +4,6 @@ import { connect } from "react-redux";
 import { getPost } from "../../redux/Actions/postActions";
 
 class AnnonceInfo extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   componentDidMount() {
     let id = this.props.match.params.annonce_id;
     console.log(id);
@@ -24,7 +20,7 @@ class AnnonceInfo extends Component {
                   <div>
                     <img
                       src={this.props.annonce.image}
-                      alt="Image"
+                      alt="annonceimage"
                       className="annonce-info-img img-fluid"
                     />
                   </div>
