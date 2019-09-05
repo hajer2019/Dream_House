@@ -6,7 +6,7 @@ const initialState = {
 };
 
 export default function(state = initialState, action) {
-  const token = localStorage.getItem("jwtToken");
+  
   switch (action.type) {
     case "SIGN_UP":
       return {
