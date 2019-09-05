@@ -39,12 +39,12 @@ class Search extends React.Component {
                 className="grid-80"
                 onChange={this.handleChange}
               >
-                <option selected>Choisir un gouvernorat</option>
-                <option value="Ben Arous"> Tunis </option>
-                <option value="Ben Arous"> Bizerte </option>
-                <option value="Mannouba"> Sousse </option>
+                <option selected>Choisir un gouvernerat</option>
+                <option value="Tunis"> Tunis </option>
+                <option value="Bizerte"> Bizerte </option>
+                <option value="Sousse"> Sousse </option>
                 <option value="Nabeul"> Nabeul </option>
-                <option value="Ariana"> Sfax </option>
+                <option value="Sfax"> Sfax </option>
               </select>
             </div>
             <div className="inp-wrap cat-wrap">
@@ -54,8 +54,6 @@ class Search extends React.Component {
                 name="ville"
                 value={this.state.ville}
                 onChange={this.handleChange}
-                class="grid-80"
-                placeholder="Saisir votre ville"
                 className="grid-80"
                 placeholder="saisir votre ville"
               />
@@ -65,16 +63,14 @@ class Search extends React.Component {
               <select
                 style={{ width: "200px" }}
                 name="categorie"
-                class="grid-80"
-                name="type"
                 className="grid-80"
                 onChange={this.handleChange}
               >
                 <option value={this.state.categorie} selected>
                   Categorie
                 </option>
-                <option value="Louer"> A louer </option>
-                <option value="Vendre"> A vendre </option>
+                <option value="A Louer"> A louer </option>
+                <option value="A vendre"> A vendre </option>
               </select>
             </div>
 
@@ -86,7 +82,7 @@ class Search extends React.Component {
                 className="grid-80"
                 style={{ width: "200px" }}
               >
-                <option value="Appartement"> Type de bien </option>
+                <option selected> Type de bien </option>
                 <option value="Appartement"> Appartement </option>
                 <option value="Bureau "> Bureau </option>
                 <option value="Villa "> Villa </option>
@@ -99,9 +95,7 @@ class Search extends React.Component {
 
             <div className="inp-wrap submit-wrap">
               <button
-                onClick={e => {
-                  this.onSubmit(e);
-                }}
+                onClick={this.onSubmit}
                 className="grid-100 btn"
                 style={{
                   marginTop: "-8px",
@@ -120,15 +114,6 @@ class Search extends React.Component {
     );
   }
 }
-
-// const mapStateToProps = state => ({
-//   house: state.reducerSearch.house
-// });
-
-// const mapDispatchToProps = dispatch => ({
-//   // return bindActionCreators({ search }, dispatch);
-//   search: searchValue => dispatch(search(searchValue))
-// });
 
 export default connect(
   null,
