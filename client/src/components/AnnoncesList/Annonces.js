@@ -16,7 +16,7 @@ class AnnoncesList extends Component {
     this.props.addToCart(id);
   };
 
-  UNSAFE_componentWillMount() {
+ componentWillMount() {
     this.props.getPosts();
   }
   // componentWillMount(){

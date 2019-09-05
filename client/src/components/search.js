@@ -1,4 +1,3 @@
-
 import React from "react";
 import { connect } from "react-redux";
 import { search } from "../redux/Actions/actionSearch";
@@ -16,6 +15,7 @@ class Search extends React.Component {
 
   handleChange = e => {
     this.setState({ [e.target.name]: e.target.value });
+    console.log(this.state);
   };
 
   onSubmit = e => {
@@ -37,18 +37,15 @@ class Search extends React.Component {
               <select
                 style={{ width: "200px" }}
                 name="gouvernerat"
-                id="gouvernerat"
                 className="grid-80"
                 onChange={this.handleChange}
               >
-                <option value={this.state.gouvernorat} selected>
-                  Choisir un gouvernorat
-                </option>
+                <option selected>Choisir un gouvernorat</option>
                 <option value="Ben Arous"> Tunis </option>
-                <option value="Ben Arous"> Ben Arous </option>
-                <option value="Mannouba"> Mannouba </option>
+                <option value="Ben Arous"> Bizerte </option>
+                <option value="Mannouba"> Sousse </option>
                 <option value="Nabeul"> Nabeul </option>
-                <option value="Ariana"> Ariana </option>
+                <option value="Ariana"> Sfax </option>
               </select>
             </div>
             <div className="inp-wrap cat-wrap">
@@ -58,45 +55,35 @@ class Search extends React.Component {
                 name="ville"
                 value={this.state.ville}
                 onChange={this.handleChange}
-                id="ville"
-
                 class="grid-80"
                 placeholder="Saisir votre ville"
-
                 className="grid-80"
                 placeholder="saisir votre ville"
-
               />
             </div>
 
             <div className="inp-wrap cat-wrap">
               <select
                 style={{ width: "200px" }}
-
                 name="categorie"
-                id="categorie"
                 class="grid-80"
-
                 name="type"
-                id="type"
                 className="grid-80"
-
                 onChange={this.handleChange}
               >
                 <option value={this.state.categorie} selected>
                   Categorie
                 </option>
-                <option value="Louer"> Louer </option>
-                <option value="Vendre"> Vendre </option>
-                <option value="Acheter"> Acheter </option>
+                <option value="Louer"> A louer </option>
+                <option value="Vendre"> A vendre </option>
               </select>
             </div>
 
             <div className="inp-wrap cat-wrap">
               <select
+                value={this.state.typebien}
                 onChange={this.handleChange}
                 name="typebien"
-                id="typebien"
                 className="grid-80"
                 style={{ width: "200px" }}
               >
@@ -149,4 +136,3 @@ export default connect(
   null,
   { search }
 )(Search);
-
