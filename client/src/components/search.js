@@ -23,7 +23,6 @@ class Search extends React.Component {
     this.props.search(this.state);
   };
   render() {
-    const { search, value } = this.props;
     return (
       <div>
         <section class="search-form">
@@ -103,7 +102,6 @@ class Search extends React.Component {
                 onClick={e => {
                   this.onSubmit(e);
                 }}
-                value={value}
                 className="grid-100 btn"
                 style={{
                   marginTop: "-8px",
